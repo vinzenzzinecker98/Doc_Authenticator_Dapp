@@ -10,7 +10,6 @@ contract("MyStringStore", accounts => {
     // Get myString from public variable getter
     const storedString = await myStringStore.myString.call();
 
-    //Test comment
     assert.equal(storedString, "Hey there!", "The string was not stored");
   });
 });
