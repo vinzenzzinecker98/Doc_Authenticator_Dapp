@@ -22,7 +22,7 @@ class ReadString extends React.Component {
     const myString = MyStringStore.myString[this.state.dataKey];
 
     // if it exists, then we display its value
-    return <p>My stored string: {myString && myString.value}</p>;
+    return <p>Value on chain: {myString && myString.value}</p>;
   }
 }
 

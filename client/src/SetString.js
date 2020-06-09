@@ -16,7 +16,7 @@ class SetString extends React.Component {
 
     // let drizzle know we want to call the `set` method with `value`
     const stackId = contract.methods["set"].cacheSend(value, {
-      from: drizzleState.accounts[0]
+      from: drizzleState.accounts[3]
     });
 
     // save the `stackId` for later reference

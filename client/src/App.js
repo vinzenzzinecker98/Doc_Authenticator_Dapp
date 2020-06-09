@@ -8,10 +8,10 @@ import Component from 'react';
 export default class App extends React.Component {
   state = { loading: true, drizzleState: null };
   render() {
-    if (this.state.loading) return "Loading Drizzle...";
+    if (this.state.loading) return "Still loading Drizzle...";
 	
     return (
-      <div className="App">
+    <div className="App">
     <h1> local demo system </h1>
 	
         <ReadString
@@ -23,6 +23,7 @@ export default class App extends React.Component {
           drizzleState={this.state.drizzleState}
         />
       </div>
+
     );
   }
   componentWillUnmount() {

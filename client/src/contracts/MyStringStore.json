@@ -32,25 +32,25 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"myString\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"x\",\"type\":\"string\"}],\"name\":\"set\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/Lenovo/OneDrive/Dokumente/UNI/6. Semester/Praktikum Blockchain/drizzle-react-tutorial/contracts/MyStringStore.sol\":\"MyStringStore\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/Lenovo/OneDrive/Dokumente/UNI/6. Semester/Praktikum Blockchain/drizzle-react-tutorial/contracts/MyStringStore.sol\":{\"keccak256\":\"0x1bb6d00c3656f43610bc8b78e7d272fe7c827343fff16ed4e1dbbf395f2ce6c0\",\"urls\":[\"bzz-raw://6a93b51f928ad929e3532afcea50172c6524ac0b36e80f16382c12aef0d0686b\",\"dweb:/ipfs/QmNso6TfDDvFBtrecWmp8Q5XJJBgoNduHniodxwLcsJLfU\"]}},\"version\":1}",
-  "bytecode": "0x60806040526040518060400160405280600b81526020017f48656c6c6f20576f726c640000000000000000000000000000000000000000008152506000908051906020019061004f929190610062565b5034801561005c57600080fd5b50610107565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106100a357805160ff19168380011785556100d1565b828001600101855582156100d1579182015b828111156100d05782518255916020019190600101906100b5565b5b5090506100de91906100e2565b5090565b61010491905b808211156101005760008160009055506001016100e8565b5090565b90565b61030b806101166000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c8063492bfa181461003b5780634ed3885e146100be575b600080fd5b610043610179565b6040518080602001828103825283818151815260200191508051906020019080838360005b83811015610083578082015181840152602081019050610068565b50505050905090810190601f1680156100b05780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b610177600480360360208110156100d457600080fd5b81019080803590602001906401000000008111156100f157600080fd5b82018360208201111561010357600080fd5b8035906020019184600183028401116401000000008311171561012557600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610217565b005b60008054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561020f5780601f106101e45761010080835404028352916020019161020f565b820191906000526020600020905b8154815290600101906020018083116101f257829003601f168201915b505050505081565b806000908051906020019061022d929190610231565b5050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061027257805160ff19168380011785556102a0565b828001600101855582156102a0579182015b8281111561029f578251825591602001919060010190610284565b5b5090506102ad91906102b1565b5090565b6102d391905b808211156102cf5760008160009055506001016102b7565b5090565b9056fea265627a7a72315820a8ee121640d5a1bb1b83c57ac5c09c0e13c48b7f1c559e701891a7f00a7edbcf64736f6c63430005100032",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c8063492bfa181461003b5780634ed3885e146100be575b600080fd5b610043610179565b6040518080602001828103825283818151815260200191508051906020019080838360005b83811015610083578082015181840152602081019050610068565b50505050905090810190601f1680156100b05780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b610177600480360360208110156100d457600080fd5b81019080803590602001906401000000008111156100f157600080fd5b82018360208201111561010357600080fd5b8035906020019184600183028401116401000000008311171561012557600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610217565b005b60008054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561020f5780601f106101e45761010080835404028352916020019161020f565b820191906000526020600020905b8154815290600101906020018083116101f257829003601f168201915b505050505081565b806000908051906020019061022d929190610231565b5050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061027257805160ff19168380011785556102a0565b828001600101855582156102a0579182015b8281111561029f578251825591602001919060010190610284565b5b5090506102ad91906102b1565b5090565b6102d391905b808211156102cf5760008160009055506001016102b7565b5090565b9056fea265627a7a72315820a8ee121640d5a1bb1b83c57ac5c09c0e13c48b7f1c559e701891a7f00a7edbcf64736f6c63430005100032",
-  "sourceMap": "34:132:1:-;;;61:38;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;34:132;8:9:-1;5:2;;;30:1;27;20:12;5:2;34:132:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
-  "deployedSourceMap": "34:132:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;34:132:1;;;;;;;;;;;;;;;;;;;;;;;;61:38;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;61:38:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;104:60;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;104:60:1;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;104:60:1;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;104:60:1;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;104:60:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;104:60:1;;;;;;;;;;;;;;;:::i;:::-;;61:38;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;104:60::-;158:1;147:8;:12;;;;;;;;;;;;:::i;:::-;;104:60;:::o;34:132::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity >=0.4.21 <0.7.0;\n\ncontract MyStringStore {\n  string public myString = \"Hello World\";\n\n  function set(string memory x) public {\n    myString = x;\n  }\n}\n",
-  "sourcePath": "C:\\Users\\Lenovo\\OneDrive\\Dokumente\\UNI\\6. Semester\\Praktikum Blockchain\\drizzle-react-tutorial\\contracts\\MyStringStore.sol",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"myString\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"x\",\"type\":\"string\"}],\"name\":\"set\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/Lenovo/OneDrive/Dokumente/UNI/6. Semester/Praktikum Blockchain/DAD/Doc_Authenticator_Dapp/contracts/MyStringStore.sol\":\"MyStringStore\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/Lenovo/OneDrive/Dokumente/UNI/6. Semester/Praktikum Blockchain/DAD/Doc_Authenticator_Dapp/contracts/MyStringStore.sol\":{\"keccak256\":\"0x15eae5590d4daf4e1d31f3a14d2139e77535b73331f5a108b6ad19096421f5f0\",\"urls\":[\"bzz-raw://1c7438bf85b6222fc22458e7fbbf5445fa4d7adb374595321a5fa327f01f34d1\",\"dweb:/ipfs/QmREsBP53J3vrg1sdGUfCnL2WMVQjgkE9R5DhigSnLAh2z\"]}},\"version\":1}",
+  "bytecode": "0x60806040526040518060400160405280600b81526020017f48656c6c6f20576f726c640000000000000000000000000000000000000000008152506000908051906020019061004f929190610062565b5034801561005c57600080fd5b50610107565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106100a357805160ff19168380011785556100d1565b828001600101855582156100d1579182015b828111156100d05782518255916020019190600101906100b5565b5b5090506100de91906100e2565b5090565b61010491905b808211156101005760008160009055506001016100e8565b5090565b90565b61030b806101166000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c8063492bfa181461003b5780634ed3885e146100be575b600080fd5b610043610179565b6040518080602001828103825283818151815260200191508051906020019080838360005b83811015610083578082015181840152602081019050610068565b50505050905090810190601f1680156100b05780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b610177600480360360208110156100d457600080fd5b81019080803590602001906401000000008111156100f157600080fd5b82018360208201111561010357600080fd5b8035906020019184600183028401116401000000008311171561012557600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610217565b005b60008054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561020f5780601f106101e45761010080835404028352916020019161020f565b820191906000526020600020905b8154815290600101906020018083116101f257829003601f168201915b505050505081565b806000908051906020019061022d929190610231565b5050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061027257805160ff19168380011785556102a0565b828001600101855582156102a0579182015b8281111561029f578251825591602001919060010190610284565b5b5090506102ad91906102b1565b5090565b6102d391905b808211156102cf5760008160009055506001016102b7565b5090565b9056fea265627a7a72315820150d60975199f2aca795fd9e0ce59f34ef3ab53eb3c733896f97855517c45e7264736f6c63430005100032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c8063492bfa181461003b5780634ed3885e146100be575b600080fd5b610043610179565b6040518080602001828103825283818151815260200191508051906020019080838360005b83811015610083578082015181840152602081019050610068565b50505050905090810190601f1680156100b05780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b610177600480360360208110156100d457600080fd5b81019080803590602001906401000000008111156100f157600080fd5b82018360208201111561010357600080fd5b8035906020019184600183028401116401000000008311171561012557600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610217565b005b60008054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561020f5780601f106101e45761010080835404028352916020019161020f565b820191906000526020600020905b8154815290600101906020018083116101f257829003601f168201915b505050505081565b806000908051906020019061022d929190610231565b5050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061027257805160ff19168380011785556102a0565b828001600101855582156102a0579182015b8281111561029f578251825591602001919060010190610284565b5b5090506102ad91906102b1565b5090565b6102d391905b808211156102cf5760008160009055506001016102b7565b5090565b9056fea265627a7a72315820150d60975199f2aca795fd9e0ce59f34ef3ab53eb3c733896f97855517c45e7264736f6c63430005100032",
+  "sourceMap": "36:138:2:-;;;64:38;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;36:138;8:9:-1;5:2;;;30:1;27;20:12;5:2;36:138:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "36:138:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;36:138:2;;;;;;;;;;;;;;;;;;;;;;;;64:38;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;64:38:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;109:62;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;109:62:2;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;109:62:2;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;109:62:2;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;109:62:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;109:62:2;;;;;;;;;;;;;;;:::i;:::-;;64:38;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;109:62::-;164:1;153:8;:12;;;;;;;;;;;;:::i;:::-;;109:62;:::o;36:138::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity >=0.4.21 <0.7.0;\r\n\r\ncontract MyStringStore {\r\n  string public myString = \"Hello World\";\r\n\r\n  function set(string memory x) public {\r\n    myString = x;\r\n  }\r\n}\r\n",
+  "sourcePath": "C:\\Users\\Lenovo\\OneDrive\\Dokumente\\UNI\\6. Semester\\Praktikum Blockchain\\DAD\\Doc_Authenticator_Dapp\\contracts\\MyStringStore.sol",
   "ast": {
-    "absolutePath": "/C/Users/Lenovo/OneDrive/Dokumente/UNI/6. Semester/Praktikum Blockchain/drizzle-react-tutorial/contracts/MyStringStore.sol",
+    "absolutePath": "/C/Users/Lenovo/OneDrive/Dokumente/UNI/6. Semester/Praktikum Blockchain/DAD/Doc_Authenticator_Dapp/contracts/MyStringStore.sol",
     "exportedSymbols": {
       "MyStringStore": [
-        52
+        68
       ]
     },
-    "id": 53,
+    "id": 69,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 38,
+        "id": 54,
         "literals": [
           "solidity",
           ">=",
@@ -61,7 +61,7 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:32:1"
+        "src": "0:32:2"
       },
       {
         "baseContracts": [],
@@ -69,20 +69,20 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 52,
+        "id": 68,
         "linearizedBaseContracts": [
-          52
+          68
         ],
         "name": "MyStringStore",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 41,
+            "id": 57,
             "name": "myString",
             "nodeType": "VariableDeclaration",
-            "scope": 52,
-            "src": "61:38:1",
+            "scope": 68,
+            "src": "64:38:2",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -90,10 +90,10 @@
               "typeString": "string"
             },
             "typeName": {
-              "id": 39,
+              "id": 55,
               "name": "string",
               "nodeType": "ElementaryTypeName",
-              "src": "61:6:1",
+              "src": "64:6:2",
               "typeDescriptions": {
                 "typeIdentifier": "t_string_storage_ptr",
                 "typeString": "string"
@@ -102,14 +102,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "48656c6c6f20576f726c64",
-              "id": 40,
+              "id": 56,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "string",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "86:13:1",
+              "src": "89:13:2",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_stringliteral_592fa743889fc7f92ac2a37bb1f5ba1daf2a5c84741ca0e0061d243a2e6707ba",
@@ -121,26 +121,26 @@
           },
           {
             "body": {
-              "id": 50,
+              "id": 66,
               "nodeType": "Block",
-              "src": "141:23:1",
+              "src": "146:25:2",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 48,
+                    "id": 64,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 46,
+                      "id": 62,
                       "name": "myString",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 41,
-                      "src": "147:8:1",
+                      "referencedDeclaration": 57,
+                      "src": "153:8:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
                         "typeString": "string storage ref"
@@ -150,47 +150,47 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 47,
+                      "id": 63,
                       "name": "x",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 43,
-                      "src": "158:1:1",
+                      "referencedDeclaration": 59,
+                      "src": "164:1:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
                         "typeString": "string memory"
                       }
                     },
-                    "src": "147:12:1",
+                    "src": "153:12:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 49,
+                  "id": 65,
                   "nodeType": "ExpressionStatement",
-                  "src": "147:12:1"
+                  "src": "153:12:2"
                 }
               ]
             },
             "documentation": null,
-            "id": 51,
+            "id": 67,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "set",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 44,
+              "id": 60,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 43,
+                  "id": 59,
                   "name": "x",
                   "nodeType": "VariableDeclaration",
-                  "scope": 51,
-                  "src": "117:15:1",
+                  "scope": 67,
+                  "src": "122:15:2",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -198,10 +198,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 42,
+                    "id": 58,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "117:6:1",
+                    "src": "122:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -211,39 +211,39 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "116:17:1"
+              "src": "121:17:2"
             },
             "returnParameters": {
-              "id": 45,
+              "id": 61,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "141:0:1"
+              "src": "146:0:2"
             },
-            "scope": 52,
-            "src": "104:60:1",
+            "scope": 68,
+            "src": "109:62:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 53,
-        "src": "34:132:1"
+        "scope": 69,
+        "src": "36:138:2"
       }
     ],
-    "src": "0:167:1"
+    "src": "0:176:2"
   },
   "legacyAST": {
-    "absolutePath": "/C/Users/Lenovo/OneDrive/Dokumente/UNI/6. Semester/Praktikum Blockchain/drizzle-react-tutorial/contracts/MyStringStore.sol",
+    "absolutePath": "/C/Users/Lenovo/OneDrive/Dokumente/UNI/6. Semester/Praktikum Blockchain/DAD/Doc_Authenticator_Dapp/contracts/MyStringStore.sol",
     "exportedSymbols": {
       "MyStringStore": [
-        52
+        68
       ]
     },
-    "id": 53,
+    "id": 69,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 38,
+        "id": 54,
         "literals": [
           "solidity",
           ">=",
@@ -254,7 +254,7 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:32:1"
+        "src": "0:32:2"
       },
       {
         "baseContracts": [],
@@ -262,20 +262,20 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 52,
+        "id": 68,
         "linearizedBaseContracts": [
-          52
+          68
         ],
         "name": "MyStringStore",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 41,
+            "id": 57,
             "name": "myString",
             "nodeType": "VariableDeclaration",
-            "scope": 52,
-            "src": "61:38:1",
+            "scope": 68,
+            "src": "64:38:2",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -283,10 +283,10 @@
               "typeString": "string"
             },
             "typeName": {
-              "id": 39,
+              "id": 55,
               "name": "string",
               "nodeType": "ElementaryTypeName",
-              "src": "61:6:1",
+              "src": "64:6:2",
               "typeDescriptions": {
                 "typeIdentifier": "t_string_storage_ptr",
                 "typeString": "string"
@@ -295,14 +295,14 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "48656c6c6f20576f726c64",
-              "id": 40,
+              "id": 56,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "string",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "86:13:1",
+              "src": "89:13:2",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_stringliteral_592fa743889fc7f92ac2a37bb1f5ba1daf2a5c84741ca0e0061d243a2e6707ba",
@@ -314,26 +314,26 @@
           },
           {
             "body": {
-              "id": 50,
+              "id": 66,
               "nodeType": "Block",
-              "src": "141:23:1",
+              "src": "146:25:2",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 48,
+                    "id": 64,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 46,
+                      "id": 62,
                       "name": "myString",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 41,
-                      "src": "147:8:1",
+                      "referencedDeclaration": 57,
+                      "src": "153:8:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
                         "typeString": "string storage ref"
@@ -343,47 +343,47 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 47,
+                      "id": 63,
                       "name": "x",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 43,
-                      "src": "158:1:1",
+                      "referencedDeclaration": 59,
+                      "src": "164:1:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
                         "typeString": "string memory"
                       }
                     },
-                    "src": "147:12:1",
+                    "src": "153:12:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 49,
+                  "id": 65,
                   "nodeType": "ExpressionStatement",
-                  "src": "147:12:1"
+                  "src": "153:12:2"
                 }
               ]
             },
             "documentation": null,
-            "id": 51,
+            "id": 67,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "set",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 44,
+              "id": 60,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 43,
+                  "id": 59,
                   "name": "x",
                   "nodeType": "VariableDeclaration",
-                  "scope": 51,
-                  "src": "117:15:1",
+                  "scope": 67,
+                  "src": "122:15:2",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -391,10 +391,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 42,
+                    "id": 58,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "117:6:1",
+                    "src": "122:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -404,26 +404,26 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "116:17:1"
+              "src": "121:17:2"
             },
             "returnParameters": {
-              "id": 45,
+              "id": 61,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "141:0:1"
+              "src": "146:0:2"
             },
-            "scope": 52,
-            "src": "104:60:1",
+            "scope": 68,
+            "src": "109:62:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 53,
-        "src": "34:132:1"
+        "scope": 69,
+        "src": "36:138:2"
       }
     ],
-    "src": "0:167:1"
+    "src": "0:176:2"
   },
   "compiler": {
     "name": "solc",
@@ -434,12 +434,11 @@
       "events": {},
       "links": {},
       "address": "0x083F46fc9473DAe28a5E2330Ba5E410C3445565b",
-      "transactionHash": "0x5014224d0c58a019ce9dc1177a9b5c2b0de6c8596b74cd49c2b252d7e978ec87"
+      "transactionHash": "0xe940ec43143a8e7435d0920822cfba8abac99ab2f8e359afd9f9454a9fea3769"
     }
   },
   "schemaVersion": "3.1.0",
-  "updatedAt": "2020-06-02T12:50:50.073Z",
-  "networkType": "ethereum",
+  "updatedAt": "2020-06-09T10:10:46.531Z",
   "devdoc": {
     "methods": {}
   },
