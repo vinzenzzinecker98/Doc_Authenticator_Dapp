@@ -1,4 +1,5 @@
 pragma solidity >=0.4.21 <0.7.0;
+//SPDX-License-Identifier: AFL-3.0
 
 contract Documents {
   mapping (string => address) public store;
