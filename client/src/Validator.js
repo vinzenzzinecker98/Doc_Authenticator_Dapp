@@ -1,6 +1,6 @@
 import React from "react";
 
-class SetString extends React.Component {
+class Validator extends React.Component {
   state = { stackId: null };
 
   handleKeyDown = e => {
@@ -40,11 +40,13 @@ class SetString extends React.Component {
   render() {
     return (
       <div>
+        To check whether a document is valid enter hash:
         <input type="text" onKeyDown={this.handleKeyDown} />
+        
         <div>{this.getTxStatus()}</div>
       </div>
     );
   }
 }
 
-export default SetString;
+export default Validator;

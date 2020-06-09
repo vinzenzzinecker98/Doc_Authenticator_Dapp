@@ -1,5 +1,4 @@
 import React from "react";
-import RegisterDoc from "./RegisterDoc";
 
 class RegisterDoc extends React.Component {
   state = { stackId: null };
@@ -17,7 +16,7 @@ class RegisterDoc extends React.Component {
 
     // let drizzle know we want to call the `set` method with `value`
     const stackId = contract.methods["set"].cacheSend(value, {
-      from: drizzleState.accounts[0]
+      from: drizzleState.accounts[3]
     });
 
     // save the `stackId` for later reference
@@ -41,7 +40,9 @@ class RegisterDoc extends React.Component {
   render() {
     return (
       <div>
+        To register a document to the ledger:
         <input type="text" onKeyDown={this.handleKeyDown} />
+        Please insert the generated hash
         <div>{this.getTxStatus()}</div>
       </div>
     );

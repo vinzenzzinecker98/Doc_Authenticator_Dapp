@@ -1,25 +1,20 @@
 pragma solidity >=0.4.21 <0.7.0;
 
 contract Documents {
-  
-  mapping (String memory => adress) public store;
+  mapping (string => address) public store;
 
-  function set(string memory x) public {
-    myString = x;
-  }
-
-  function verify(String memory hash) returns (boolean)
+  function verify(string memory hash) public view returns (bool)
   {
-    if (store[hash]!=null){
+    if (store[hash] != address(0)){
       return true;
     }
     return false;
   }
 
-  function register (String memory hash)
+  function register (string memory _hash) public
   {
-    if (store[hash]=null){
-       store[hash]=msg.sender;
+    if (store[_hash] == address(0)){
+       store[_hash] = msg.sender;
     }
   }
 }

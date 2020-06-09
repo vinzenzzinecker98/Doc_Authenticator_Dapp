@@ -1,8 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import ReadString from "./ReadString";
-import SetString from "./SetString";
+import RegisterDoc from "./RegisterDoc";
+import Validator from "./Validator";
 import Component from 'react';
 
 export default class App extends React.Component {
@@ -12,13 +12,14 @@ export default class App extends React.Component {
 	
     return (
     <div className="App">
-    <h1> local demo system </h1>
+    <h1> Register documents:</h1>
 	
-        <ReadString
+        <RegisterDoc
           drizzle={this.props.drizzle}
           drizzleState={this.state.drizzleState}
         />
-      	<SetString
+      <h1>Validate Documents:</h1>
+      	<Validator
           drizzle={this.props.drizzle}
           drizzleState={this.state.drizzleState}
         />
