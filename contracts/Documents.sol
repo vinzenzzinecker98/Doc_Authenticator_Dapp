@@ -4,8 +4,6 @@ pragma solidity >=0.4.21 <0.7.0;
 contract Documents {
   mapping (string => address) public store;
 
-  
-
   function register (string memory _hash) public
   {
     if (store[_hash] == address(0)){
