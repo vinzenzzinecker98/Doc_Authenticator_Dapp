@@ -19,5 +19,5 @@ truffle develop
 alternatively, use ganache for the blockchain
 
 then, run 
-    $npm start 
+    `$npm start `
 while in the client directory, which starts the local server
