@@ -1,25 +1,23 @@
-import React from "react";
-import RegisterDoc from "./RegisterDoc";
-
-class RegisterDoc extends React.Component {
-  state = { stackId: null };
+import React, { PropTypes, Component } from "react";
+class Register_file extends React.Component {
+  state = { stackId: null, file: null };
 
   handleKeyDown = e => {
     // if the enter key is pressed, set the value with the string
     if (e.keyCode === 13) {
-      this.setValue(e.target.value);
+      this.regdoc(e.target.value);
     }
   };
 
-  setValue = value => {
+  regdoc = value => {
     const { drizzle, drizzleState } = this.props;
-    const contract = drizzle.contracts.MyStringStore;
+    const contract = drizzle.contracts.Documents;
 
-    // let drizzle know we want to call the `set` method with `value`
-    const stackId = contract.methods["set"].cacheSend(value, {
-      from: drizzleState.accounts[0]
+    // let drizzle know we want to call the `register` method with `value`
+    const stackId = contract.methods["register"].cacheSend(value, {
+      from: drizzleState.accounts[3]
     });
-
+    console.log(stackId);
     // save the `stackId` for later reference
     this.setState({ stackId });
   };
@@ -38,14 +36,47 @@ class RegisterDoc extends React.Component {
     return `Transaction status: ${transactions[txHash] && transactions[txHash].status}`;
   };
 
+  getfilename = () => {
+    if (this.state.file!=null) var filename = this.state.file.name;
+    return `die Datei heißt ${filename && filename.value}`;
+  }
+  register_provided_file = (e) =>{
+   
+    //  this.state.file.name
+    
+
+     //placeholder for hashing
+
+    // TODO generate hash of the File and store it (call regdoc(hash))
+  }
+
+  setfile= (e) =>{
+    var file=e.target.files[0];
+    this.setState({file});
+  }
+
   render() {
     return (
       <div>
-        <input type="text" onKeyDown={this.handleKeyDown} />
-        <div>{this.getTxStatus()}</div>
+        To register a document to the ledger:
+        <input 
+            id="InputFile"
+            type="file"
+            OnChange={this.setfile}
+        />
+        <input
+            type="button"
+            
+            value="clickME"
+          
+            onClick={this.register_provided_file()}
+
+        />
+        <div>{this.getTxStatus}</div>
+        <div>{this.getfilename()}</div>
       </div>
     );
   }
 }
 
-export default RegisterDoc;
+export default Register_file;

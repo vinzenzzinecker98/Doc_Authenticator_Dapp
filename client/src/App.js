@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import RegisterDoc from "./RegisterDoc";
 import Validator from "./Validator";
-import Component from 'react';
+import Register_file from './Register_file';
 
 export default class App extends React.Component {
   state = { loading: true, drizzleState: null };
@@ -15,6 +15,10 @@ export default class App extends React.Component {
     <h1> Register documents:</h1>
 	
         <RegisterDoc
+          drizzle={this.props.drizzle}
+          drizzleState={this.state.drizzleState}
+        />
+        <Register_file
           drizzle={this.props.drizzle}
           drizzleState={this.state.drizzleState}
         />
