@@ -37,9 +37,12 @@ class Register_file extends React.Component {
   };
 
   getfilename = () => {
+    // Only for testing purposes
     if (this.state.file!=null) var filename = this.state.file.name;
     return `die Datei heißt ${filename && filename.value}`;
   }
+
+  //Methos called by the buttonclick.
   register_provided_file = (e) =>{
    
     //  this.state.file.name
@@ -47,12 +50,15 @@ class Register_file extends React.Component {
 
      //placeholder for hashing
 
-    // TODO generate hash of the File and store it (call regdoc(hash))
+    // TODO generate hash of the File and store it (call regdoc(HASH_VALUE))
   }
 
+  // This Method is called when the user selects a file. It sets the State so that the Method 
+  // "register_provided_file" cann access the file.
   setfile= (e) =>{
     var file=e.target.files[0];
     this.setState({file});
+    //TODO the setstate seems to be not working (?)
   }
 
   render() {
