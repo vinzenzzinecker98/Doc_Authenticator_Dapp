@@ -6,19 +6,19 @@ class RegisterDoc extends React.Component {
   handleKeyDown = e => {
     // if the enter key is pressed, set the value with the string
     if (e.keyCode === 13) {
-      this.setValue(e.target.value);
+      this.regdoc(e.target.value);
     }
   };
 
-  setValue = value => {
+  regdoc = value => {
     const { drizzle, drizzleState } = this.props;
-    const contract = drizzle.contracts.MyStringStore;
+    const contract = drizzle.contracts.Documents;
 
-    // let drizzle know we want to call the `set` method with `value`
-    const stackId = contract.methods["set"].cacheSend(value, {
+    // let drizzle know we want to call the `register` method with `value`
+    const stackId = contract.methods["register"].cacheSend(value, {
       from: drizzleState.accounts[3]
     });
-
+    console.log(stackId);
     // save the `stackId` for later reference
     this.setState({ stackId });
   };
@@ -44,6 +44,7 @@ class RegisterDoc extends React.Component {
         <input type="text" onKeyDown={this.handleKeyDown} />
         Please insert the generated hash
         <div>{this.getTxStatus()}</div>
+        
       </div>
     );
   }

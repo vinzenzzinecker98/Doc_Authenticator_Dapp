@@ -12,7 +12,7 @@ contract("Documents", accounts => {
     // Validate
     const a = await documents.verify("HiMrWorldd", {from: accounts[1]});
     const b = await documents.verify("HiMrWorld", {from: accounts[1]});
-    assert.equal(b, true, "nicht geklappt")
+    assert.equal(a, true, "nicht geklappt")
     
   });
 });

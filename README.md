@@ -3,13 +3,14 @@
 ## How to setup:
 install truffle 
     `npm install -g truffle`
-Clone this repository
+
+And clone this repository.
 
 In the /client directory, run:
     `npm install @drizzle/store`
 
 ## How to run: 
-In the root directory, run
+In the main directory, run
 ```
 truffle develop
 (develop)$ compile

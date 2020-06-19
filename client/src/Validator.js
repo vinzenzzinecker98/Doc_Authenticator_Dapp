@@ -1,49 +1,50 @@
 import React from "react";
 
 class Validator extends React.Component {
-  state = { stackId: null };
-
+  state = { dataKey1: null };
+  result = { result: "u" };
   handleKeyDown = e => {
     // if the enter key is pressed, set the value with the string
     if (e.keyCode === 13) {
-      this.setValue(e.target.value);
+      this.verification(e.target.value);
     }
   };
 
-  setValue = value => {
+  
+  verification = value => {
     const { drizzle, drizzleState } = this.props;
-    const contract = drizzle.contracts.MyStringStore;
+    const contract = drizzle.contracts.Documents;
 
-    // let drizzle know we want to call the `set` method with `value`
-    const stackId = contract.methods["set"].cacheSend(value, {
+    
+    const dataKey1 =  contract.methods["verify"].cacheCall(value, {
       from: drizzleState.accounts[3]
     });
 
-    // save the `stackId` for later reference
-    this.setState({ stackId });
+    console.log(dataKey1);
+
+    this.setState({dataKey1});
   };
 
-  getTxStatus = () => {
-    // get the transaction states from the drizzle state
-    const { transactions, transactionStack } = this.props.drizzleState;
 
-    // get the transaction hash using our saved `stackId`
-    const txHash = transactionStack[this.state.stackId];
+  getResult = () => {
+    const { Documents } = this.props.drizzleState.contracts;
+    // using the saved `dataKey1`, get the return value of GetNumber function
+    const result_1 = this.state.dataKey1;
+    const myString = Documents.verify[this.state.dataKey1];
+    //const result_1 = D
+    return `The Document is ${myString && myString.value}`;
+  }
 
-    // if transaction hash does not exist, don't display anything
-    if (!txHash) return null;
+  render() {  
 
-    // otherwise, return the transaction status
-    return `Transaction status: ${transactions[txHash] && transactions[txHash].status}`;
-  };
-
-  render() {
     return (
       <div>
         To check whether a document is valid enter hash:
         <input type="text" onKeyDown={this.handleKeyDown} />
         
-        <div>{this.getTxStatus()}</div>
+        
+        <div>{this.getResult()}</div>
+       
       </div>
     );
   }
