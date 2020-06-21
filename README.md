@@ -17,7 +17,7 @@ truffle develop
 (develop)$ migrate
 ```
 
-alternatively, use ganache for the blockchain
+alternatively, use ganache for the blockchain and only run `truffle migrate` in the main directory
 
 then, run 
     `$npm start `
