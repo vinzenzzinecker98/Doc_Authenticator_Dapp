@@ -4,7 +4,7 @@ import './App.css';
 import RegisterDoc from "./RegisterDoc";
 import Validator from "./Validator";
 import Register_file from './Register_file';
-
+import Validator_file from './Validator_file'
 export default class App extends React.Component {
   state = { loading: true, drizzleState: null };
   render() {
@@ -27,6 +27,10 @@ export default class App extends React.Component {
           drizzle={this.props.drizzle}
           drizzleState={this.state.drizzleState}
         />
+        <Validator_file
+        drizzle={this.props.drizzle}
+        drizzleState={this.state.drizzleState}
+      />
       </div>
 
     );

@@ -1,5 +1,5 @@
 import React from "react";
-
+import CryptoJS from "crypto-js";
 class Validator extends React.Component {
   state = { dataKey1: null };
   result = { result: "u" };
