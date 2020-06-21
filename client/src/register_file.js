@@ -6,7 +6,7 @@ import CryptoJS from "crypto-js";
 class Register_file extends React.Component {
   state = { stackId: null };
 
-  regdoc = value => {
+  registerDocument = (value) => {
     const { drizzle, drizzleState } = this.props;
     const contract = drizzle.contracts.Documents;
 
@@ -17,7 +17,7 @@ class Register_file extends React.Component {
     console.log(stackId);
     // save the `stackId` for later reference
     this.setState({ stackId });
-  }
+  };
 
   getTxStatus = () => {
     // get the transaction states from the drizzle state
@@ -31,7 +31,7 @@ class Register_file extends React.Component {
 
     // otherwise, return the transaction status
     return `Transaction status: ${transactions[txHash] && transactions[txHash].status}`;
-  }
+  };
 
   getfilename = () => {
     const { drizzle, drizzleState } = this.props;
@@ -48,10 +48,10 @@ class Register_file extends React.Component {
     var file = event.target.files[0];
     var reader = new FileReader();
     reader.onload = function (event) {
-    var data = event.target.result;
-    console.log('Data: ' + data);
+      var data = event.target.result;
+      console.log('Data: ' + data);
     }
-};
+    };
   reader.readAsBinaryString(file);
   }
 
@@ -62,33 +62,9 @@ class Register_file extends React.Component {
     var file=e.target.files[0];
     this.setState({file});
     //TODO the setstate seems to be not working (?)
-  }
-  
-  loading = (file, callbackProgress, callbackFinal)=> {
-    var chunkSize  = 1024*1024; // bytes
-    var offset     = 0;
-    var size=chunkSize;
-    var partial;
-    var index = 0;
-    if(file.size===0){
-        callbackFinal();
-    }
-    while (offset < file.size) {
-        partial = file.slice(offset, offset+size);
-        var reader = new FileReader;
-        reader.size = chunkSize;
-        reader.offset = offset;
-        reader.index = index;
-        reader.onload = function(evt) {
-            this.callbackRead(this, file, evt, callbackProgress, callbackFinal);
-        };
-        reader.readAsArrayBuffer(partial);
-        offset += chunkSize;
-        index += 1;
-    }
-  }
-  
-  
+  };
+    
+  //Handles the input of the file and then registers it instantly
   handleFiles = (e) => {
   
     var file = e.target.files[0];
@@ -97,13 +73,19 @@ class Register_file extends React.Component {
       return;
     }
 
+    // is needed to reference this.registerDocument from inside the onload function
+    // took only 3 hours to find this
+    var self=this;
+
+
+
     var reader = new FileReader();
+
     reader.onload = function (e) {
     var data = e.target.result;
     var encrypted = CryptoJS.SHA256( data );
     console.log('encrypted: ' + encrypted);
-
-    this.regdoc(encrypted.value);
+    self.registerDocument(encrypted.toString());
 
     };
     reader.readAsBinaryString(file);
