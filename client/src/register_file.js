@@ -1,7 +1,28 @@
 import React, { PropTypes, Component } from "react";
+import FineUploaderTraditional from 'fine-uploader-wrappers'
+import Gallery from 'react-fine-uploader'
+import 'react-fine-uploader/gallery/gallery.css'
+
+const uploader = new FineUploaderTraditional({
+  options: {
+      chunking: {
+          enabled: true
+      },
+      deleteFile: {
+          enabled: true,
+          endpoint: '/uploads'
+      },
+      request: {
+          endpoint: '/uploads'
+      },
+      retry: {
+          enableAuto: true
+      }
+  }
+})
 class Register_file extends React.Component {
   state = { stackId: null, file: null };
-
+  
   handleKeyDown = e => {
     // if the enter key is pressed, set the value with the string
     if (e.keyCode === 13) {
@@ -37,6 +58,7 @@ class Register_file extends React.Component {
   };
 
   getfilename = () => {
+    const { drizzle, drizzleState } = this.props;
     // Only for testing purposes
     if (this.state.file!=null) var filename = this.state.file.name;
     return `die Datei heißt ${filename && filename.value}`;
@@ -56,6 +78,7 @@ class Register_file extends React.Component {
   // This Method is called when the user selects a file. It sets the State so that the Method 
   // "register_provided_file" cann access the file.
   setfile= (e) =>{
+    const { drizzle, drizzleState } = this.props;
     var file=e.target.files[0];
     this.setState({file});
     //TODO the setstate seems to be not working (?)
@@ -70,10 +93,11 @@ class Register_file extends React.Component {
             type="file"
             OnChange={this.setfile}
         />
+        <Gallery uploader={ uploader } />
         <input
             type="button"
             
-            value="clickME"
+            value="Register chosen file"
           
             onClick={this.register_provided_file()}
 

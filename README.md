@@ -8,7 +8,9 @@ And clone this repository.
 
 In the /client directory, run:
     `npm install @drizzle/store`
-
+    and `npm install react-fine-uploader`
+    and `fine-uploader-wrappers`
+    and `npm install fine-uploader`
 ## How to run: 
 In the main directory, run
 ```
