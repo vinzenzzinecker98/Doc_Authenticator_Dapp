@@ -1,34 +1,10 @@
 import React, { PropTypes, Component } from "react";
-import FineUploaderTraditional from 'fine-uploader-wrappers'
-import Gallery from 'react-fine-uploader'
-import 'react-fine-uploader/gallery/gallery.css'
+import 'react-fine-uploader/gallery/gallery.css';
+import CryptoJS from "crypto-js";
 
-const uploader = new FineUploaderTraditional({
-  options: {
-      chunking: {
-          enabled: true
-      },
-      deleteFile: {
-          enabled: true,
-          endpoint: '/uploads'
-      },
-      request: {
-          endpoint: '/uploads'
-      },
-      retry: {
-          enableAuto: true
-      }
-  }
-})
+
 class Register_file extends React.Component {
-  state = { stackId: null, file: null };
-  
-  handleKeyDown = e => {
-    // if the enter key is pressed, set the value with the string
-    if (e.keyCode === 13) {
-      this.regdoc(e.target.value);
-    }
-  };
+  state = { stackId: null };
 
   regdoc = value => {
     const { drizzle, drizzleState } = this.props;
@@ -41,7 +17,7 @@ class Register_file extends React.Component {
     console.log(stackId);
     // save the `stackId` for later reference
     this.setState({ stackId });
-  };
+  }
 
   getTxStatus = () => {
     // get the transaction states from the drizzle state
@@ -55,7 +31,7 @@ class Register_file extends React.Component {
 
     // otherwise, return the transaction status
     return `Transaction status: ${transactions[txHash] && transactions[txHash].status}`;
-  };
+  }
 
   getfilename = () => {
     const { drizzle, drizzleState } = this.props;
@@ -65,14 +41,18 @@ class Register_file extends React.Component {
   }
 
   //Methos called by the buttonclick.
-  register_provided_file = (e) =>{
-   
-    //  this.state.file.name
-    
+  register_provided_file = (event) =>{
 
-     //placeholder for hashing
-
-    // TODO generate hash of the File and store it (call regdoc(HASH_VALUE))
+    if( document.getElementById('InputFile').files[0]!= null){
+    var selectedFile = document.getElementById('InputFile').files[0];
+    var file = event.target.files[0];
+    var reader = new FileReader();
+    reader.onload = function (event) {
+    var data = event.target.result;
+    console.log('Data: ' + data);
+    }
+};
+  reader.readAsBinaryString(file);
   }
 
   // This Method is called when the user selects a file. It sets the State so that the Method 
@@ -83,6 +63,51 @@ class Register_file extends React.Component {
     this.setState({file});
     //TODO the setstate seems to be not working (?)
   }
+  
+  loading = (file, callbackProgress, callbackFinal)=> {
+    var chunkSize  = 1024*1024; // bytes
+    var offset     = 0;
+    var size=chunkSize;
+    var partial;
+    var index = 0;
+    if(file.size===0){
+        callbackFinal();
+    }
+    while (offset < file.size) {
+        partial = file.slice(offset, offset+size);
+        var reader = new FileReader;
+        reader.size = chunkSize;
+        reader.offset = offset;
+        reader.index = index;
+        reader.onload = function(evt) {
+            this.callbackRead(this, file, evt, callbackProgress, callbackFinal);
+        };
+        reader.readAsArrayBuffer(partial);
+        offset += chunkSize;
+        index += 1;
+    }
+  }
+  
+  
+  handleFiles = (e) => {
+  
+    var file = e.target.files[0];
+
+    if(file===undefined){
+      return;
+    }
+
+    var reader = new FileReader();
+    reader.onload = function (e) {
+    var data = e.target.result;
+    var encrypted = CryptoJS.SHA256( data );
+    console.log('encrypted: ' + encrypted);
+
+    this.regdoc(encrypted.value);
+
+    };
+    reader.readAsBinaryString(file);
+}
 
   render() {
     return (
@@ -91,22 +116,14 @@ class Register_file extends React.Component {
         <input 
             id="InputFile"
             type="file"
-            OnChange={this.setfile}
+            onChange={this.handleFiles}
         />
-        <Gallery uploader={ uploader } />
-        <input
-            type="button"
-            
-            value="Register chosen file"
-          
-            onClick={this.register_provided_file()}
-
-        />
-        <div>{this.getTxStatus}</div>
+        <div>{this.getTxStatus()}</div>
         <div>{this.getfilename()}</div>
       </div>
     );
   }
-}
 
+
+}
 export default Register_file;
