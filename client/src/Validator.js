@@ -16,9 +16,7 @@ class Validator extends React.Component {
     const contract = drizzle.contracts.Documents;
 
     
-    const dataKey1 =  contract.methods["verify"].cacheCall(value, {
-      from: drizzleState.accounts[3]
-    });
+    const dataKey1 =  contract.methods["verify"].cacheCall(value);
 
     console.log(dataKey1);
 
