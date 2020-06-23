@@ -93,14 +93,14 @@ class Register_file extends React.Component {
   render() {
     return (
       <div>
-        To register a document to the ledger:
+        
         <input 
             id="InputFile"
             type="file"
             onChange={this.handleFiles}
         />
         <div>{this.getTxStatus()}</div>
-        <div>{this.getfilename()}</div>
+        
       </div>
     );
   }

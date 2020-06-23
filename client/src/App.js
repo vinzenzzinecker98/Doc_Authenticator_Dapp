@@ -6,6 +6,7 @@ import Validator from "./Validator";
 import Register_file from './Register_file';
 import Validator_file from './Validator_file'
 import Nav from 'react-bootstrap/Nav'
+import {Container, Row, Col, Navbar} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
@@ -22,31 +23,55 @@ export default class App extends React.Component {
     return (
     <div className="App">
   <Router>
+    <Navbar  bg="light" expand="lg">
+      <Navbar.Brand>Doc Authentication</Navbar.Brand>
 
-    <Nav justify variant="tabs" defaultActiveKey="/home">
+
+    <Nav className="mr-auto" justify variant="pill" defaultActiveKey="/"> 
       <Nav.Item>
-        <Link to="/">Home</Link>
+        <Nav.Link as={Link} to="/">Home</Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Link to="/reg">Register Documents to the ledger</Link>
+        <Nav.Link as={Link} to="/reg">Register Documents to the ledger</Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Link to="/val">Validate Documents</Link>
+        <Nav.Link as={Link} to="/val">Validate Documents</Nav.Link>
       </Nav.Item>      
     </Nav>
 
+    </Navbar>
     <Switch>
           
 
           <Route path="/reg">
-            <RegisterDoc
-              drizzle={this.props.drizzle}
-              drizzleState={this.state.drizzleState}
-            />
-            <Register_file
-              drizzle={this.props.drizzle}
-              drizzleState={this.state.drizzleState}
-            />
+            <Container fluid>
+              <Row justify="center">
+                <h1 justify="center">
+                  Register File
+                </h1>
+              </Row>
+              <Row>
+                <Col xs={2}> insert SHA-256 hash of the document manually</Col>
+                <Col>      
+                  <RegisterDoc
+                      drizzle={this.props.drizzle}
+                      drizzleState={this.state.drizzleState}
+                  />
+                </Col>
+              </Row>
+              <Row>
+              <Col xs={2}> File-Upload-Feature</Col>
+                <Col>      
+                  <Register_file
+                      drizzle={this.props.drizzle}
+                      drizzleState={this.state.drizzleState}
+                  />
+                </Col>
+                      
+              </Row>
+            </Container>
+            
+            
           </Route>
 
           <Route path="/val">
