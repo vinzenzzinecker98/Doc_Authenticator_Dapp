@@ -37,8 +37,8 @@ class Validator extends React.Component {
 
     return (
       <div>
-        <h1>Validate Documents:</h1>
         
+
         To check whether a document is valid enter hash:
         <input type="text" onKeyDown={this.handleKeyDown} />
         

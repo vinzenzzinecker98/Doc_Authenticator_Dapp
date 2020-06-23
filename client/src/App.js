@@ -6,7 +6,7 @@ import Validator from "./Validator";
 import Register_file from './Register_file';
 import Validator_file from './Validator_file'
 import Nav from 'react-bootstrap/Nav'
-import {Container, Row, Col, Navbar} from 'react-bootstrap';
+import {Container, Row, Col, Navbar, Accordion, Card, Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
@@ -44,45 +44,83 @@ export default class App extends React.Component {
           
 
           <Route path="/reg">
-            <Container fluid>
-              <Row justify="center">
-                <h1 justify="center">
-                  Register File
-                </h1>
-              </Row>
-              <Row>
-                <Col xs={2}> insert SHA-256 hash of the document manually</Col>
-                <Col>      
-                  <RegisterDoc
+          <Accordion>
+              <Card>
+              <h1>Register Documents:</h1>
+              </Card>
+              <Card>
+                <Card.Header>
+                  <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                    Register by manual Hash input
+                  </Accordion.Toggle>
+                </Card.Header>
+                <Accordion.Collapse eventKey="0">
+                  <Card.Body>
+                    <RegisterDoc
                       drizzle={this.props.drizzle}
                       drizzleState={this.state.drizzleState}
-                  />
-                </Col>
-              </Row>
-              <Row>
-              <Col xs={2}> File-Upload-Feature</Col>
-                <Col>      
+                    />
+                  </Card.Body>
+                </Accordion.Collapse>
+              </Card>
+              <Card>
+                <Card.Header>
+                  <Accordion.Toggle as={Button} variant="link" eventKey="1">
+                    Register by file upload feature
+                  </Accordion.Toggle>
+                </Card.Header>
+                <Accordion.Collapse eventKey="1">
+                  <Card.Body>
                   <Register_file
-                      drizzle={this.props.drizzle}
-                      drizzleState={this.state.drizzleState}
+                    drizzle={this.props.drizzle}
+                    drizzleState={this.state.drizzleState}
                   />
-                </Col>
-                      
-              </Row>
-            </Container>
+                  </Card.Body>
+                </Accordion.Collapse>
+              </Card>
+            </Accordion>
             
             
           </Route>
 
           <Route path="/val">
-          <Validator
-              drizzle={this.props.drizzle}
-              drizzleState={this.state.drizzleState}
-            />
-          <Validator_file
-              drizzle={this.props.drizzle}
-              drizzleState={this.state.drizzleState}
-          />
+          <Accordion defaultActiveKey="0">
+              <Card>
+              <h1>Validate Documents:</h1>
+              </Card>
+              <Card>
+                <Card.Header>
+                  <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                    Validate by manual Hash input
+                  </Accordion.Toggle>
+                </Card.Header>
+                <Accordion.Collapse eventKey="0">
+                  <Card.Body>
+                    <Validator
+                      drizzle={this.props.drizzle}
+                      drizzleState={this.state.drizzleState}
+                    />
+                  </Card.Body>
+                </Accordion.Collapse>
+              </Card>
+              <Card>
+                <Card.Header>
+                  <Accordion.Toggle as={Button} variant="link" eventKey="1">
+                    Validaty by file upload feature
+                  </Accordion.Toggle>
+                </Card.Header>
+                <Accordion.Collapse eventKey="1">
+                  <Card.Body>
+                  <Validator_file
+                    drizzle={this.props.drizzle}
+                    drizzleState={this.state.drizzleState}
+                  />
+                  </Card.Body>
+                </Accordion.Collapse>
+              </Card>
+            </Accordion>
+          
+          
           </Route>
 
           <Route path="/">

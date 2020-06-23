@@ -93,7 +93,7 @@ class Register_file extends React.Component {
   render() {
     return (
       <div>
-        
+        Upload the Document to register it to the ledger: <br></br>
         <input 
             id="InputFile"
             type="file"
