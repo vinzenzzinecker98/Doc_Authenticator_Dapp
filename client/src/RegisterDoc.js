@@ -40,6 +40,7 @@ class RegisterDoc extends React.Component {
   render() {
     return (
       <div>
+        <h1> Register documents:</h1>
         To register a document to the ledger:
         <input type="text" onKeyDown={this.handleKeyDown} />
         Please insert the generated hash

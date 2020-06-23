@@ -5,6 +5,15 @@ import RegisterDoc from "./RegisterDoc";
 import Validator from "./Validator";
 import Register_file from './Register_file';
 import Validator_file from './Validator_file'
+import Nav from 'react-bootstrap/Nav'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 export default class App extends React.Component {
   state = { loading: true, drizzleState: null };
   render() {
@@ -12,25 +21,57 @@ export default class App extends React.Component {
 	
     return (
     <div className="App">
-    <h1> Register documents:</h1>
-	
-        <RegisterDoc
-          drizzle={this.props.drizzle}
-          drizzleState={this.state.drizzleState}
-        />
-        <Register_file
-          drizzle={this.props.drizzle}
-          drizzleState={this.state.drizzleState}
-        />
-      <h1>Validate Documents:</h1>
-      	<Validator
-          drizzle={this.props.drizzle}
-          drizzleState={this.state.drizzleState}
-        />
-        <Validator_file
-        drizzle={this.props.drizzle}
-        drizzleState={this.state.drizzleState}
-      />
+  <Router>
+
+    <Nav justify variant="tabs" defaultActiveKey="/home">
+      <Nav.Item>
+        <Link to="/">Home</Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Link to="/reg">Register Documents to the ledger</Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Link to="/val">Validate Documents</Link>
+      </Nav.Item>      
+    </Nav>
+
+    <Switch>
+          
+
+          <Route path="/reg">
+            <RegisterDoc
+              drizzle={this.props.drizzle}
+              drizzleState={this.state.drizzleState}
+            />
+            <Register_file
+              drizzle={this.props.drizzle}
+              drizzleState={this.state.drizzleState}
+            />
+          </Route>
+
+          <Route path="/val">
+          <Validator
+              drizzle={this.props.drizzle}
+              drizzleState={this.state.drizzleState}
+            />
+          <Validator_file
+              drizzle={this.props.drizzle}
+              drizzleState={this.state.drizzleState}
+          />
+          </Route>
+
+          <Route path="/">
+            <h1>Description goes here</h1>
+          </Route>
+
+    </Switch>
+  </Router>
+    
+      
+        
+        
+      
+      	
       </div>
 
     );
