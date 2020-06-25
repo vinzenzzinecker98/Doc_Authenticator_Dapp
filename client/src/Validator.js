@@ -30,7 +30,7 @@ class Validator extends React.Component {
     const result_1 = this.state.dataKey1;
     var address = Documents.verify[this.state.dataKey1];
     //why is it alyws 0 or 1???
-    return `The Document is ${myString && myString.value}`;
+    return `The Document is ${address && address.value}`;
   }
 
   render() {  
