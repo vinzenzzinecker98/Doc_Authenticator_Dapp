@@ -16,7 +16,7 @@ class RegisterDoc extends React.Component {
 
     // let drizzle know we want to call the `register` method with `value`
     const stackId = contract.methods["register"].cacheSend(value, {
-      from: drizzleState.accounts[3]
+      from: drizzleState.accounts[4]
     });
     console.log(stackId);
     // save the `stackId` for later reference

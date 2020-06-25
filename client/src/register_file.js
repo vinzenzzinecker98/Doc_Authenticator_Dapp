@@ -10,6 +10,7 @@ class Register_file extends React.Component {
     const contract = drizzle.contracts.Documents;
 
     // let drizzle know we want to call the `register` method with `value`
+    // TODO: Sending the correct account??? Only gives 0x00...001
     const stackId = contract.methods["register"].cacheSend(value, {
       from: drizzleState.accounts[3]
     });
