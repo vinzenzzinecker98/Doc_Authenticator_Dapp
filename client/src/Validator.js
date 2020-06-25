@@ -28,8 +28,8 @@ class Validator extends React.Component {
     const { Documents } = this.props.drizzleState.contracts;
     // using the saved `dataKey1`, get the return value of GetNumber function
     const result_1 = this.state.dataKey1;
-    const myString = Documents.verify[this.state.dataKey1];
-    //const result_1 = D
+    var address = Documents.verify[this.state.dataKey1];
+    //why is it alyws 0 or 1???
     return `The Document is ${myString && myString.value}`;
   }
 

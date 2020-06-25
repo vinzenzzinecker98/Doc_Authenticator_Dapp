@@ -6,7 +6,7 @@ contract Documents {
 
   function register (string memory _hash) public
   {
-    //Only register document if noone has claimed the exact hash value before.
+    //Only register document if no one has claimed the exact hash value before.
     //so that document ownership cannot be altered
     if (store[_hash] == address(0)){
 
@@ -17,7 +17,6 @@ contract Documents {
 
   function verify (string memory __hash) public view returns (address)
   {
-    // if the store is ..
     if (store[__hash] != address(0)){
       return store[__hash];
     }

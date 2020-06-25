@@ -6,7 +6,7 @@ import Validator from "./Validator";
 import Register_file from './Register_file';
 import Validator_file from './Validator_file'
 import Nav from 'react-bootstrap/Nav'
-import {Container, Row, Col, Navbar, Accordion, Card, Button} from 'react-bootstrap';
+import {Navbar, Accordion, Card, Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
