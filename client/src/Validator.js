@@ -30,7 +30,14 @@ class Validator extends React.Component {
     const result_1 = this.state.dataKey1;
     var address = Documents.verify[this.state.dataKey1];
     //why is it alyws 0 or 1???
-    return `The Document is ${address && address.value}`;
+    if (address == undefined){
+      return `Enter a hash`
+    }
+    if (address.value == 0x0000000000000000000000000000000000000000 || address == 0){
+     return `The Document has not been registered yet`
+    }
+
+    return `The Document has been registered by ${address && address.value}`;
   }
 
   render() {  

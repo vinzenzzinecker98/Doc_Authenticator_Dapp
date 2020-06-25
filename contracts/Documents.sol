@@ -17,9 +17,6 @@ contract Documents {
 
   function verify (string memory __hash) public view returns (address)
   {
-    if (store[__hash] != address(0)){
       return store[__hash];
-    }
-    return address(0);
   }
 }
