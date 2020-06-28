@@ -23,13 +23,13 @@ export default class App extends React.Component {
     return (
     <div className="App">
   <Router>
-    <Navbar  bg="light" expand="lg">
+    <Navbar bg="light" expand="lg">
       <Navbar.Brand>Doc Authentication</Navbar.Brand>
 
 
-    <Nav className="mr-auto" justify variant="pill" defaultActiveKey="/"> 
+    <Nav fill variant="tabs" defaultActiveKey="/home"> 
       <Nav.Item>
-        <Nav.Link as={Link} to="/">Home</Nav.Link>
+        <Nav.Link as={Link} to="/home">Home</Nav.Link>
       </Nav.Item>
       <Nav.Item>
         <Nav.Link as={Link} to="/reg">Register Documents to the ledger</Nav.Link>
@@ -40,13 +40,13 @@ export default class App extends React.Component {
     </Nav>
 
     </Navbar>
-    <Switch>
-          
+    <div class="wrapper">
+    <Switch> 
 
           <Route path="/reg">
           <Accordion>
               <Card>
-              <h1>Register Documents:</h1>
+              <h1>Register Documents</h1>
               </Card>
               <Card>
                 <Card.Header>
@@ -86,7 +86,7 @@ export default class App extends React.Component {
           <Route path="/val">
           <Accordion defaultActiveKey="0">
               <Card>
-              <h1>Validate Documents:</h1>
+              <h1>Validate Documents</h1>
               </Card>
               <Card>
                 <Card.Header>
@@ -123,11 +123,12 @@ export default class App extends React.Component {
           
           </Route>
 
-          <Route path="/">
+          <Route path="/home">
             <h1>Description goes here</h1>
           </Route>
 
     </Switch>
+    </div>
   </Router>
     
       
