@@ -7,8 +7,9 @@ install truffle
 And clone this repository.
 
 In the /client directory, run:
-    `npm install @drizzle/store`
-    and `npm install Crypto-JS`
+    `npm install`
+, which will install all dependencies.
+
 ## How to run: 
 In the main directory, run
 ```
