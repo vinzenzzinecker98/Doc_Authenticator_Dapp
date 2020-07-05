@@ -28,13 +28,13 @@ export default class App extends React.Component {
       return (<div><img src={metamasklogo} alt="fox logo" width="30" height="30"></img>MetaMask is running</div>)
     }
     else{
-      return ( <div>please install metamask plugin from <a href="https://metamask.io/">here</a></div>)
+      return ( <div>Please install metamask plugin from <a href="https://metamask.io/">here</a></div>)
     }
   }
 
   // This Method renders the Application
   render() {
-    if (this.state.loading) return "Still loading Drizzle...";
+    if (this.state.loading) return "Loading Drizzle...";
 	
     return (
     <div className="App">
