@@ -44,8 +44,7 @@ class Register_file extends React.Component {
     }
     // otherwise, return the transaction status
     else{
-      return (<div>Transaction status: <span style={{color: '#ebcf1a'}}>waiting</span></div>)
-      return ;
+      return (<div>Transaction status: <span style={{color: '#ebcf1a'}}>undefined</span></div>)      
     }
 
   };
