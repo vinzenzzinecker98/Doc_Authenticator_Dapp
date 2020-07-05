@@ -46,8 +46,24 @@ class RegisterDoc extends React.Component {
     // if transaction hash does not exist, don't display anything
     if (!txHash) return null;
 
+    //if success return green status:
+    if(transactions[txHash]!=undefined && transactions[txHash].status.toString()=='success'){
+      return (<div>Transaction status: <span style={{color: '#22ee22'}}>success!</span></div>)
+    }
+    //if error return red status
+    if(transactions[txHash]!=undefined && transactions[txHash].status.toString()=='error'){
+      return (<div>Transaction status: <span style={{color: '#f2a6a2'}}>error</span></div>)
+    }
+    //if pending return yellow status:
+    if(transactions[txHash]!=undefined && transactions[txHash].status.toString()=='pending'){
+      return (<div>Transaction status: <span style={{color: '#ebcf1a'}}>pending</span></div>)
+    }
     // otherwise, return the transaction status
-    return `Transaction status: ${transactions[txHash] && transactions[txHash].status}`;
+    else{
+      return (<div>Transaction status: <span style={{color: '#ebcf1a'}}>waiting</span></div>)
+      return ;
+    }
+
   };
 
   render() {
