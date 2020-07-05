@@ -37,7 +37,14 @@ class Validator extends React.Component {
      return `The Document has not been registered yet`
     }
 
-    return (<div> This Document has been registered by <b>{address && address.value}</b> <button class="botn" onCLick={toClip(address.value)}><i class="fa fa-clone"></i> Copy public address to Clipboard</button></div>);
+    return (
+    <div> This Document <span style={{color: '#a7e362'}}>has been registered</span> by <b>{address && address.value}</b><br></br> <br></br>
+    <button class="botn" onCLick={
+      toClip(address.value)
+      }>
+      <i class="fa fa-clone"></i> 
+      &nbsp; Copy the public address to Clipboard
+    </button></div>);
   }
   
   render() {  
@@ -46,7 +53,7 @@ class Validator extends React.Component {
       <div>
         
 
-        To check whether a document is valid enter hash:<br></br>
+        To check whether a document is valid enter its SHA-256 hash value: <br></br><br></br>
         <input type="text" onKeyDown={this.handleKeyDown} />
         
         

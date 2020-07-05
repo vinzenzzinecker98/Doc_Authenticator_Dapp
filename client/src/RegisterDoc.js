@@ -48,7 +48,7 @@ class RegisterDoc extends React.Component {
 
     //if success return green status:
     if(transactions[txHash]!=undefined && transactions[txHash].status.toString()=='success'){
-      return (<div>Transaction status: <span style={{color: '#22ee22'}}>success!</span></div>)
+      return (<div>Transaction status: <span style={{color: '#a7e362'}}>success!</span></div>)
     }
     //if error return red status
     if(transactions[txHash]!=undefined && transactions[txHash].status.toString()=='error'){
