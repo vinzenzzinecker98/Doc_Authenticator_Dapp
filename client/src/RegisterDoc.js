@@ -1,12 +1,12 @@
 import React from "react";
-
+import {checkMetamask} from "./util.js";
 class RegisterDoc extends React.Component {
   state = { stackId: null };
 
   handleKeyDown = e => {
     // if the enter key is pressed, set the value with the string
     if (e.keyCode === 13) {
-      if(this.checkMetamask())
+      if(checkMetamask(this))
       {
         if(!window.confirm("Do you want to 𝐫𝐞𝐠𝐢𝐬𝐭𝐞𝐫 the hashcode \""+ e.target.value + "\" to the ledger?"))
         {
@@ -33,23 +33,7 @@ class RegisterDoc extends React.Component {
     this.setState({ stackId });
   };
 
-  checkMetamask = () =>  {
-    var web3=this.props.drizzle.web3;
-    if (typeof web3 !== 'undefined') {
-      console.log('web3 is enabled');
-      if (web3.currentProvider.isMetaMask === true) {
-        
-        console.log('MetaMask is active');
-        return true;
-      } else {
-        console.log('MetaMask is not available');
-        return false;
-      }
-    } else {
-      console.log('web3 is not found');
-      return false;
-    };
-  }
+  
 
 
   getTxStatus = () => {

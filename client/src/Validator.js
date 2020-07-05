@@ -1,4 +1,5 @@
 import React from "react";
+import {toClip, checkMetamask} from "./util.js";
 
 class Validator extends React.Component {
   state = { dataKey1: null };
@@ -37,16 +38,16 @@ class Validator extends React.Component {
      return `The Document has not been registered yet`
     }
 
-    return `The Document has been registered by ${address && address.value}`;
+    return (<div> This Document has been registered by <b>{address && address.value}</b> <button class="botn" onCLick={toClip(address.value)}><i class="fa fa-clone"></i> Copy public address to Clipboard</button></div>);
   }
-
+  
   render() {  
 
     return (
       <div>
         
 
-        To check whether a document is valid enter hash:
+        To check whether a document is valid enter hash:<br></br>
         <input type="text" onKeyDown={this.handleKeyDown} />
         
         

@@ -24,6 +24,8 @@ export default class App extends React.Component {
 	
     return (
     <div className="App">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+
   <Router>
     <Navbar bg="light" expand="lg">
       <Navbar.Brand>Doc Authentication</Navbar.Brand>

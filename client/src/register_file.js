@@ -1,6 +1,6 @@
 import React from "react";
 import CryptoJS from "crypto-js";
-
+import {checkMetamask} from "./util.js";
 
 class Register_file extends React.Component {
   state = { stackId: null };
@@ -35,27 +35,11 @@ class Register_file extends React.Component {
 
   
 
-  checkMetamask = () =>  {
-    var web3=this.props.drizzle.web3;
-    if (typeof web3 !== 'undefined') {
-      console.log('web3 is enabled');
-      if (web3.currentProvider.isMetaMask === true) {
-        
-        console.log('MetaMask is active');
-        return true;
-      } else {
-        console.log('MetaMask is not available');
-        return false;
-      }
-    } else {
-      console.log('web3 is not found');
-      return false;
-    };
-  }
+ 
   
   //Handles the input of the file and then registers it after checking for MetaMask and user confirmation. 
   handleFiles = (e) => {
-    if (!this.checkMetamask()){
+    if (!checkMetamask(this)){
       window.alert("Please install the Metamask Plugin from https://metamask.io/ and login to a valid account to use these features");
       console.log("Error: Metamask Plugin not found or set up incorrectly");
     }
