@@ -16,6 +16,7 @@ const options = {
   web3: {
     fallback: {
       type: "ws",
+      //127.0.0.1:7545 is the location where the ganache chain is running
       url: "ws://127.0.0.1:7545",
     },
   },
