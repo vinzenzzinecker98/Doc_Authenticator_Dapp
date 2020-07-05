@@ -33,40 +33,33 @@ class Register_file extends React.Component {
     return `Transaction status: ${transactions[txHash] && transactions[txHash].status}`;
   };
 
-  getfilename = () => {
-    const { drizzle, drizzleState } = this.props;
-    // Only for testing purposes
-    if (this.state.file!=null) var filename = this.state.file.name;
-    return `die Datei heißt ${filename && filename.value}`;
-  }
+  
 
-  //Methos called by the buttonclick.
-  register_provided_file = (event) =>{
-
-    if( document.getElementById('InputFile').files[0]!= null){
-    var selectedFile = document.getElementById('InputFile').files[0];
-    var file = event.target.files[0];
-    var reader = new FileReader();
-    reader.onload = function (event) {
-      var data = event.target.result;
-      console.log('Data: ' + data);
-    }
+  checkMetamask = () =>  {
+    var web3=this.props.drizzle.web3;
+    if (typeof web3 !== 'undefined') {
+      console.log('web3 is enabled');
+      if (web3.currentProvider.isMetaMask === true) {
+        
+        console.log('MetaMask is active');
+        return true;
+      } else {
+        console.log('MetaMask is not available');
+        return false;
+      }
+    } else {
+      console.log('web3 is not found');
+      return false;
     };
-  reader.readAsBinaryString(file);
   }
-
-  // This Method is called when the user selects a file. It sets the State so that the Method 
-  // "register_provided_file" cann access the file.
-  setfile= (e) =>{
-    const { drizzle, drizzleState } = this.props;
-    var file=e.target.files[0];
-    this.setState({file});
-    //TODO the setstate seems to be not working (?)
-  };
-    
+  
   //Handles the input of the file and then registers it instantly
   handleFiles = (e) => {
-  
+    if (!this.checkMetamask()){
+      window.alert("Please install the Metamask Plugin from https://metamask.io/ and login to a valid account to use these features");
+      console.log("Error: Metamask Plugin not found or set up incorrectly");
+    }
+    else{
     var file = e.target.files[0];
 
     if(file===undefined){
@@ -89,7 +82,7 @@ class Register_file extends React.Component {
 
     };
     reader.readAsBinaryString(file);
-}
+}}
 
   render() {
     return (
