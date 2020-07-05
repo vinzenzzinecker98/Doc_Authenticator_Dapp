@@ -4,6 +4,7 @@ import {checkMetamask} from "./util.js";
 
 class Register_file extends React.Component {
   state = { stackId: null };
+  _fn=null;
 
   registerDocument = (value) => {
     const { drizzle, drizzleState } = this.props;
@@ -35,7 +36,16 @@ class Register_file extends React.Component {
 
   
 
- 
+  getFilename=()=>{
+    if(this._fn==""||this._fn==null){
+      return null;
+    }
+    else{
+    
+      return ('provided file: ' + this._fn);
+    }
+
+  }
   
   //Handles the input of the file and then registers it after checking for MetaMask and user confirmation. 
   handleFiles = (e) => {
@@ -55,9 +65,12 @@ class Register_file extends React.Component {
     }
     // is needed to reference this.registerDocument from inside the onload function (no idea why)
     var self=this;
+
+    this._fn=file.name;
     var reader = new FileReader();
     reader.onload = 
       function (e) {
+        self._fn=file.name;
         var data = e.target.result;
         var encrypted = CryptoJS.SHA256( data );
         console.log('SHA265 of the document: ' + encrypted);
@@ -70,11 +83,18 @@ class Register_file extends React.Component {
     return (
       <div>
         Upload the Document to register it to the ledger: <br></br>
+        <label className="custom-file-upload">
         <input 
             id="InputFile"
             type="file"
             onChange={this.handleFiles}
         />
+        Select file
+        </label>
+        {' '}
+        {this.getFilename()}
+
+        
         <div>{this.getTxStatus()}</div>
         
       </div>

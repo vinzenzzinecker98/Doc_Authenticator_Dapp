@@ -27,22 +27,22 @@ export default class App extends React.Component {
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
 
   <Router>
-    <Navbar bg="light" expand="lg">
+    <Navbar>
       <Navbar.Brand>Doc Authentication</Navbar.Brand>
-
-
-    <Nav fill variant="tabs" defaultActiveKey="/home"> 
-      <Nav.Item>
-        <Nav.Link as={Link} to="/home">Home</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link as={Link} to="/reg">Register Documents to the ledger</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link as={Link} to="/val">Validate Documents</Nav.Link>
-      </Nav.Item>      
-    </Nav>
-
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+          <Nav fill variant="tabs" defaultActiveKey="/home"> 
+            <Nav.Item>
+              <Nav.Link as={Link} to="/home">Home</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link as={Link} to="/reg">Register Documents to the ledger</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link as={Link} to="/val">Validate Documents</Nav.Link>
+            </Nav.Item>      
+          </Nav>
+      </Navbar.Collapse>
     </Navbar>
     <div className="wrapper">
     <Switch> 
@@ -55,7 +55,7 @@ export default class App extends React.Component {
               
               <Card>
                 <Card.Header>
-                  <Accordion.Toggle as={Button} variant="link" eventKey="1">
+                  <Accordion.Toggle as={Button} variant="primary" eventKey="1">
                     Register by file upload feature
                   </Accordion.Toggle>
                 </Card.Header>
@@ -70,7 +70,7 @@ export default class App extends React.Component {
               </Card>
               <Card>
                 <Card.Header>
-                  <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                  <Accordion.Toggle as={Button} variant="primary" eventKey="0">
                     Register by manual Hash input
                   </Accordion.Toggle>
                 </Card.Header>
@@ -96,7 +96,7 @@ export default class App extends React.Component {
               
               <Card>
                 <Card.Header>
-                  <Accordion.Toggle as={Button} variant="link" eventKey="1">
+                  <Accordion.Toggle as={Button} variant="primary" eventKey="1">
                     Validate by file upload feature
                   </Accordion.Toggle>
                 </Card.Header>
@@ -112,7 +112,7 @@ export default class App extends React.Component {
 
               <Card>
                 <Card.Header>
-                  <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                  <Accordion.Toggle as={Button} variant="primary" eventKey="0">
                     Validate by manual Hash input
                   </Accordion.Toggle>
                 </Card.Header>

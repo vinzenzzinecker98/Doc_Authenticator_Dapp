@@ -1,6 +1,5 @@
 import React from "react";
 import {toClip, checkMetamask} from "./util.js";
-
 class Validator extends React.Component {
   state = { dataKey1: null };
   result = { result: "u" };
@@ -32,7 +31,7 @@ class Validator extends React.Component {
     var address = Documents.verify[this.state.dataKey1];
     //why is it alyws 0 or 1???
     if (address == undefined){
-      return `Enter a hash`
+      return `Enter the SHA-256 hash of the document`
     }
     if (address.value == 0x0000000000000000000000000000000000000000 || address == 0){
      return `The Document has not been registered yet`

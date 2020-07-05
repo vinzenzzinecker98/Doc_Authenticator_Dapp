@@ -1,11 +1,12 @@
 import React from "react";
 import CryptoJS from "crypto-js";
+import {Button} from 'react-bootstrap';
+import {toClip, checkMetamask} from "./util.js";
 class Validator extends React.Component {
-  state = { dataKey1: null };
-  result = { result: "u" };
-  
+  state = { dataKey1: null};
+  _fn=null;
 
-  //Handles the input of the file and then registers it instantly
+    //Handles the input of the file and then registers it instantly
   handleFiles = (e) => {
   
     var file = e.target.files[0];
@@ -18,16 +19,13 @@ class Validator extends React.Component {
     // took only 3 hours to find this
     var self=this;
 
-
-
+    this._fn=file.name;
     var reader = new FileReader();
-
     reader.onload = function (e) {
     var data = e.target.result;
     var encrypted = CryptoJS.SHA256( data );
     console.log('encrypted: ' + encrypted);
     self.verification(encrypted.toString());
-
     };
     reader.readAsBinaryString(file);
 }
@@ -35,7 +33,6 @@ class Validator extends React.Component {
     const { drizzle, drizzleState } = this.props;
     const contract = drizzle.contracts.Documents;
 
-    
     const dataKey1 =  contract.methods["verify"].cacheCall(value);
 
     console.log(dataKey1);
@@ -57,20 +54,33 @@ class Validator extends React.Component {
      return `The Document has not been registered yet`
     }
 
-    return `The Document has been registered by ${address && address.value}`;
+    return (<div> This Document has been registered by <b>{address && address.value}</b> <button class="botn" onCLick={toClip(address.value)}><i class="fa fa-clone"></i> Copy public address to Clipboard</button></div>);
   }
+  getFilename=()=>{
+    if(this._fn==""||this._fn==null){
+      return null;
+    }
+    else{
+    
+      return ('provided file: ' + this._fn);
+    }
 
+  }
   render() {  
 
     return (
       <div>
-        To check whether a document is valid enter hash:
-        
-        <input 
+        Select the document which you want to validate: <br></br><br></br>
+        <label className="custom-file-upload">
+          <input 
             id="InputFile"
             type="file"
             onChange={this.handleFiles}
-        />
+          />
+        Select file</label>
+        {' '}
+        {this.getFilename()}
+        
         
         <div>{this.getResult()}</div>
        
