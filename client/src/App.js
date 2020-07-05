@@ -16,6 +16,8 @@ import {
 } from "react-router-dom";
 
 export default class App extends React.Component {
+  
+
   state = { loading: true, drizzleState: null };
   render() {
     if (this.state.loading) return "Still loading Drizzle...";
@@ -40,7 +42,7 @@ export default class App extends React.Component {
     </Nav>
 
     </Navbar>
-    <div class="wrapper">
+    <div className="wrapper">
     <Switch> 
 
           <Route path="/reg">

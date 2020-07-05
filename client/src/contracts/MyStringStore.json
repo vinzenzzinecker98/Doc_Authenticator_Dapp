@@ -433,12 +433,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x19A4e568969b0325B71ad178436243C6F246189C",
-      "transactionHash": "0xfcce481878682ea9242cabe145dfe9bdfde5a07aaa728b287f5c31efee08c17d"
+      "address": "0x468DC223a6854Fde4Ba655FE649f22403D03c28e",
+      "transactionHash": "0x15dd65d8ebee34086c0644261a92f36b9e146bbfff9b4fc51ed560fdec7cbb5a"
     }
   },
   "schemaVersion": "3.1.0",
-  "updatedAt": "2020-06-25T16:21:11.172Z",
+  "updatedAt": "2020-07-05T09:56:53.640Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

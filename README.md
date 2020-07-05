@@ -18,8 +18,12 @@ truffle develop
 (develop)$ migrate
 ```
 
-alternatively, use ganache for the blockchain and only run `truffle migrate` in the main directory
+alternatively, use ganache for the blockchain.
+
+Then run `truffle migrate` in the main directory
 
 then, run 
     `$npm start `
-while in the client directory, which starts the local server
+while in the client directory, which starts the local server.
+
+You also need to add the MetaMask plugin to your Browser (Chrome or Firefox). Then login to Metamask using a private key from the ganache Framework, to ensure you have enough Ether to send transactions.
