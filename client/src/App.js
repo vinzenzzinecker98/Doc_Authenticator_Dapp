@@ -50,21 +50,7 @@ export default class App extends React.Component {
               <Card>
               <h1>Register Documents</h1>
               </Card>
-              <Card>
-                <Card.Header>
-                  <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                    Register by manual Hash input
-                  </Accordion.Toggle>
-                </Card.Header>
-                <Accordion.Collapse eventKey="0">
-                  <Card.Body>
-                    <RegisterDoc
-                      drizzle={this.props.drizzle}
-                      drizzleState={this.state.drizzleState}
-                    />
-                  </Card.Body>
-                </Accordion.Collapse>
-              </Card>
+              
               <Card>
                 <Card.Header>
                   <Accordion.Toggle as={Button} variant="link" eventKey="1">
@@ -80,6 +66,21 @@ export default class App extends React.Component {
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
+              <Card>
+                <Card.Header>
+                  <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                    Register by manual Hash input
+                  </Accordion.Toggle>
+                </Card.Header>
+                <Accordion.Collapse eventKey="0">
+                  <Card.Body>
+                    <RegisterDoc
+                      drizzle={this.props.drizzle}
+                      drizzleState={this.state.drizzleState}
+                    />
+                  </Card.Body>
+                </Accordion.Collapse>
+              </Card>
             </Accordion>
             
             
@@ -90,21 +91,7 @@ export default class App extends React.Component {
               <Card>
               <h1>Validate Documents</h1>
               </Card>
-              <Card>
-                <Card.Header>
-                  <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                    Validate by manual Hash input
-                  </Accordion.Toggle>
-                </Card.Header>
-                <Accordion.Collapse eventKey="0">
-                  <Card.Body>
-                    <Validator
-                      drizzle={this.props.drizzle}
-                      drizzleState={this.state.drizzleState}
-                    />
-                  </Card.Body>
-                </Accordion.Collapse>
-              </Card>
+              
               <Card>
                 <Card.Header>
                   <Accordion.Toggle as={Button} variant="link" eventKey="1">
@@ -117,6 +104,22 @@ export default class App extends React.Component {
                     drizzle={this.props.drizzle}
                     drizzleState={this.state.drizzleState}
                   />
+                  </Card.Body>
+                </Accordion.Collapse>
+              </Card>
+
+              <Card>
+                <Card.Header>
+                  <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                    Validate by manual Hash input
+                  </Accordion.Toggle>
+                </Card.Header>
+                <Accordion.Collapse eventKey="0">
+                  <Card.Body>
+                    <Validator
+                      drizzle={this.props.drizzle}
+                      drizzleState={this.state.drizzleState}
+                    />
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
