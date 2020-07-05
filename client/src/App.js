@@ -97,7 +97,7 @@ export default class App extends React.Component {
               <Card>
                 <Card.Header>
                   <Accordion.Toggle as={Button} variant="link" eventKey="1">
-                    Validaty by file upload feature
+                    Validate by file upload feature
                   </Accordion.Toggle>
                 </Card.Header>
                 <Accordion.Collapse eventKey="1">
