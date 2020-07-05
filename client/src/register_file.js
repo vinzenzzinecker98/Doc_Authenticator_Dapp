@@ -59,21 +59,20 @@ class Register_file extends React.Component {
       window.alert("Please install the Metamask Plugin from https://metamask.io/ and login to a valid account to use these features");
       console.log("Error: Metamask Plugin not found or set up incorrectly");
     }
-    else{
+    else {
     var file = e.target.files[0];
 
     if(file===undefined){
       return;
     }
-
+    if(!window.confirm("Do you want to 𝐫𝐞𝐠𝐢𝐬𝐭𝐞𝐫 the file \"" + file.name + "\" to the ledger?"))
+    {
+      return;      
+    }
     // is needed to reference this.registerDocument from inside the onload function
     // took only 3 hours to find this
     var self=this;
-
-
-
     var reader = new FileReader();
-
     reader.onload = function (e) {
     var data = e.target.result;
     var encrypted = CryptoJS.SHA256( data );

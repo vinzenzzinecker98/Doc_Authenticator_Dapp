@@ -8,6 +8,10 @@ class RegisterDoc extends React.Component {
     if (e.keyCode === 13) {
       if(this.checkMetamask())
       {
+        if(!window.confirm("Do you want to 𝐫𝐞𝐠𝐢𝐬𝐭𝐞𝐫 the hashcode \""+ e.target.value + "\" to the ledger?"))
+        {
+          return;      
+        }
       this.regdoc(e.target.value);
       }
       else {
