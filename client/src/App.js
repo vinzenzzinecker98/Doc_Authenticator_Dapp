@@ -41,11 +41,11 @@ export default class App extends React.Component {
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
 
   <Router>
-    <Navbar fill expand="lg">
+    <Navbar  expand="lg" bg="light">
       <Navbar.Brand>Doc Authentication</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-          <Nav justify variant="tabs" defaultActiveKey="/home"> 
+          <Nav fill variant="tabs" defaultActiveKey="/home"> 
             <Nav.Item>
               <Nav.Link as={Link} to="/home">Home</Nav.Link>
             </Nav.Item>            
