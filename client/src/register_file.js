@@ -53,7 +53,7 @@ class Register_file extends React.Component {
     };
   }
   
-  //Handles the input of the file and then registers it instantly
+  //Handles the input of the file and then registers it after checking for MetaMask and user confirmation. 
   handleFiles = (e) => {
     if (!this.checkMetamask()){
       window.alert("Please install the Metamask Plugin from https://metamask.io/ and login to a valid account to use these features");
@@ -69,16 +69,15 @@ class Register_file extends React.Component {
     {
       return;      
     }
-    // is needed to reference this.registerDocument from inside the onload function
-    // took only 3 hours to find this
+    // is needed to reference this.registerDocument from inside the onload function (no idea why)
     var self=this;
     var reader = new FileReader();
-    reader.onload = function (e) {
-    var data = e.target.result;
-    var encrypted = CryptoJS.SHA256( data );
-    console.log('encrypted: ' + encrypted);
-    self.registerDocument(encrypted.toString());
-
+    reader.onload = 
+      function (e) {
+        var data = e.target.result;
+        var encrypted = CryptoJS.SHA256( data );
+        console.log('SHA265 of the document: ' + encrypted);
+        self.registerDocument(encrypted.toString());
     };
     reader.readAsBinaryString(file);
 }}
