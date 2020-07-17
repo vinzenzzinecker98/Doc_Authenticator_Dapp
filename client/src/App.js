@@ -46,15 +46,15 @@ export default class App extends React.Component {
       <Navbar.Brand>Doc Authentication</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-          <Nav fill variant="tabs" defaultActiveKey="/home"> 
+          <Nav fill variant="tabs" defaultActiveKey="/"> 
             <Nav.Item>
-              <Nav.Link as={Link} to="/home">Home</Nav.Link>
+              <Nav.Link href="/" as={Link} to="/">Service description</Nav.Link>
             </Nav.Item>            
             <Nav.Item>
-              <Nav.Link as={Link} to="/reg">Register</Nav.Link>
+              <Nav.Link href="/reg" as={Link} to="/reg">Register documents</Nav.Link>
             </Nav.Item>
                 <Nav.Item>
-              <Nav.Link as={Link} to="/val">Validate</Nav.Link>
+              <Nav.Link href="/val" as={Link} to="/val">Validate documents</Nav.Link>
             </Nav.Item>      
           </Nav>
       </Navbar.Collapse>
@@ -66,7 +66,6 @@ export default class App extends React.Component {
     </Navbar>
     <div className="wrapper">
     <Switch> 
-
           <Route path="/reg">
           <Accordion>
               <Card>
@@ -150,7 +149,7 @@ export default class App extends React.Component {
           
           </Route>
 
-          <Route path="/home">
+          <Route path="/">
           <Description></Description>
           </Route>
 
@@ -170,7 +169,7 @@ export default class App extends React.Component {
   componentWillUnmount() {
     this.unsubscribe();
   }
-  
+
   componentDidMount() {
     const { drizzle } = this.props;
 

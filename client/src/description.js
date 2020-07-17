@@ -12,10 +12,11 @@ class description extends React.Component {
       <p><h4>There are two main features:</h4> (1) You can Register Documents to the ledger<br></br>(2) You can verify Documents (see whether they have been
        registered, and by whom.)
         <p className="text-muted">For the registration feature (1) you need to be signed in to your Ethereum Account, using the Metamask Plug-In 
-        (obtainable from <a href="https://metamask.io/">here</a>).<br></br> The verification feature (2) is usable without login and without Metamask.</p>
+        (obtainable from <a href="https://metamask.io/">here</a>).<br></br> 
+        The verification feature (2) is usable without login and without Metamask.</p>
         <p>
-          <h4>For each feature there are two approaches:</h4> <p> You can either use the file upload function which lets you conveniently select the document
-             you want to register/validate: 
+          <h4>For each feature there are two approaches:</h4> <p> 
+            You can either use the file selection function which lets you conveniently select the document you want to register/validate: 
             <br></br>- File-type and extension of the file is irrelevant, only the filesize may not exceed
           your browsers maximum local cache (which is typically 265 MB).)<br></br>
           - The file is then hashed on your local machine and only the SHA-265 value is registered to the blockchain.</p>
