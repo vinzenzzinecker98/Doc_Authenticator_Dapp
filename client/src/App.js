@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import RegisterDoc from "./RegisterDoc";
 import Validator from "./Validator";
-import Register_file from './Register_file';
+import Register_file from './register_file';
 import Validator_file from './Validator_file'
 import Nav from 'react-bootstrap/Nav'
 import metamasklogo from "./ressources/metamask.png"
