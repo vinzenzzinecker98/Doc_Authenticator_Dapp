@@ -42,7 +42,7 @@ export default class App extends React.Component {
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
 
   <Router>
-    <Navbar  expand="lg" bg="light">
+    <Navbar fixed="top" expand="lg" bg="light">
       <Navbar.Brand>Doc Authentication</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
