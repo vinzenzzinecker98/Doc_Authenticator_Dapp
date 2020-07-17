@@ -9,6 +9,7 @@ import Nav from 'react-bootstrap/Nav'
 import metamasklogo from "./ressources/metamask.png"
 import {Navbar, Accordion, Card, Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Description from "./description"
 import {
   BrowserRouter as Router,
   Switch,
@@ -150,7 +151,7 @@ export default class App extends React.Component {
           </Route>
 
           <Route path="/home">
-            <h1>Description goes here</h1>
+          <Description></Description>
           </Route>
 
     </Switch>
