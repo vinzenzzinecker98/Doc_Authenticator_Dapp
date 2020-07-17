@@ -67,7 +67,7 @@ export default class App extends React.Component {
     <div className="wrapper">
     <Switch> 
           <Route path="/reg">
-          <Accordion>
+          <Accordion defaultActiveKey="0">
               <Card>
               <h1>Register Documents</h1>
               </Card>

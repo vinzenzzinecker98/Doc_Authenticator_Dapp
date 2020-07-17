@@ -87,7 +87,7 @@ class Register_file extends React.Component {
       function (e) {
         self._fn=file.name;
         var data = e.target.result;
-        var encrypted = CryptoJS.SHA256( data );
+        var encrypted = CryptoJS.SHA256(CryptoJS.enc.Latin1.parse(data)); //fix encoding (see https://stackoverflow.com/questions/20263741/getting-md5sum-of-a-file-through-crypto-js)
         console.log('SHA265 of the document: ' + encrypted);
         self.registerDocument(encrypted.toString());
     };

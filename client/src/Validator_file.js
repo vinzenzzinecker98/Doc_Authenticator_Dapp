@@ -22,10 +22,10 @@ class Validator extends React.Component {
     this._fn=file.name;
     var reader = new FileReader();
     reader.onload = function (e) {
-    var data = e.target.result;
-    var encrypted = CryptoJS.SHA256( data );
-    console.log('encrypted: ' + encrypted);
-    self.verification(encrypted.toString());
+      var data = e.target.result;
+      var encrypted = CryptoJS.SHA256(CryptoJS.enc.Latin1.parse(data)); //fix encoding (see https://stackoverflow.com/questions/20263741/getting-md5sum-of-a-file-through-crypto-js)
+      console.log('SHA256: ' + encrypted);
+      self.verification(encrypted.toString());
     };
     reader.readAsBinaryString(file);
 }
@@ -34,9 +34,6 @@ class Validator extends React.Component {
     const contract = drizzle.contracts.Documents;
 
     const dataKey1 =  contract.methods["verify"].cacheCall(value);
-
-    console.log(dataKey1);
-
     this.setState({dataKey1});
   };
 
