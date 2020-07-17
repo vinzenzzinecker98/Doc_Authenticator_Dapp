@@ -5,13 +5,14 @@ class description extends React.Component {
 
   render() {
     return (
+      <div>
       <Card><Card.Header><h1>Description </h1></Card.Header>
       <Card.Body style={{"text-align": "left"}}>
 
-      <p><h3>This Website is an access-point to a local Ethereum blockchain and can be used to authenticate the integrity of documents.</h3></p>
+      <p><h3>This website is an access-point to a local Ethereum blockchain and can be used to authenticate the integrity of documents.</h3></p>
       <p><h4>There are two main features:</h4> (1) You can Register Documents to the ledger<br></br>(2) You can verify Documents (see whether they have been
        registered, and by whom.)
-        <p className="text-muted">For the registration feature (1) you need to be signed in to your Ethereum Account, using the Metamask Plug-In 
+        <p className="text-muted">For the registration feature (1) you need to be signed in to your Ethereum Account, using the MetaMask Plug-In 
         (obtainable from <a href="https://metamask.io/">here</a>).<br></br> 
         The verification feature (2) is usable without login and without Metamask.</p>
         <p>
@@ -25,6 +26,11 @@ class description extends React.Component {
             In case you want to use another hash-function, you can also do that but note that in this case you cannot use the file-select feature for
             validation, and you have to tell the people you provide with the document, which hash function they have to use.
           </p>
+          <h4>Ether prices:</h4>
+          <p>Registering a documement comes with a gas fee averaging 0.00075 Ether, which is about 15 Cent (given 1 Ether = 200€). The nature of the service allows the validation to be free of charge, 
+            because it does not alter the state of the blockchain (contract call), so you only have to pay Ether once - when registering a new document and it can be validated 
+            for free.
+          </p>
           
         </p>
         
@@ -35,6 +41,12 @@ class description extends React.Component {
     
       </Card.Body>
     </Card>
+    <br></br><br></br>
+    <Card>
+      <Card.Header><h1>How it works</h1></Card.Header>
+      <Card.Body><h3>Frameworks:</h3></Card.Body>
+    </Card>
+    </div>
     );
   }
 
