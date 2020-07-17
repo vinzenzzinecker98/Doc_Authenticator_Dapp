@@ -170,6 +170,7 @@ export default class App extends React.Component {
   componentWillUnmount() {
     this.unsubscribe();
   }
+  
   componentDidMount() {
     const { drizzle } = this.props;
 
