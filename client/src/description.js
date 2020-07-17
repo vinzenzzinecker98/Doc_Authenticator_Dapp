@@ -22,7 +22,7 @@ class description extends React.Component {
           your browsers maximum local cache (which is typically 265 MB).)<br></br>
           - The file is then hashed on your local machine and only the SHA-265 value is registered to the blockchain.</p>
           <p>
-            Secondly, if you dont trust the service, you can also generate the SHA-256 value yourself and provide the hash value.
+            Secondly, if you dont trust the service, you can also generate the SHA-256 value yourself (For Windows: run "CertUtil -hashfile C:\\path\to\file.xyz SHA256") and provide the hash value.
             In case you want to use another hash-function, you can also do that but note that in this case you cannot use the file-select feature for
             validation, and you have to tell the people you provide with the document, which hash function they have to use.
           </p>
