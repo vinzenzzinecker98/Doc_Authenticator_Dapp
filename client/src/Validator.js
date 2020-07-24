@@ -7,7 +7,15 @@ class Validator extends React.Component {
   handleKeyDown = e => {
     // if the enter key is pressed, set the value with the string
     if (e.keyCode === 13) {
-      this.verification(e.target.value);
+      var regex = new RegExp("[A-Fa-f0-9]{64}");
+        if(regex.test(e.target.value))
+        {
+          this.verification(e.target.value);
+        }
+        else {
+          window.confirm("Your given String is not a SHA-256 value, please try again. Please provide the String representation of a SHA256 Hash, which consists of 64 Hex values. Example: a591a6d40bf420404a011733cfb7b190d62c65bf0bcda32b57b277d9ad9f146e")
+        }
+      
     }
   };
 
