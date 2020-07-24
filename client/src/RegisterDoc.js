@@ -88,8 +88,8 @@ class RegisterDoc extends React.Component {
     return (
       <div>
         
-        Insert the SHA-256 hash value of the document to register it to the ledger: <br></br>
-        <input type="text" onKeyDown={this.handleKeyDown} />
+        Insert the SHA-256 hash value of the document to register it to the ledger. (Press enter to confirm input) <br></br><br></br>
+        <input type="text" size="64" onKeyDown={this.handleKeyDown} />
         
         <div>{this.getTxStatus()}</div>
         

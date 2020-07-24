@@ -62,8 +62,8 @@ class Validator extends React.Component {
       <div>
         
 
-        To check whether a document is valid enter its SHA-256 hash value: <br></br><br></br>
-        <input type="text" onKeyDown={this.handleKeyDown} />
+        To check whether a document is valid enter its SHA-256 hash value. (Press enter to confirm input) <br></br><br></br>
+        <input type="text" size="64" onKeyDown={this.handleKeyDown} />
         
         
         <div>{this.getResult()}</div>
