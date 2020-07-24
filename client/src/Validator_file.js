@@ -6,7 +6,7 @@ class Validator extends React.Component {
   state = { dataKey1: null};
   _fn=null;
 
-    //Handles the input of the file and then registers it instantly
+  //Handles the input of the file, creates its hash value and then calls the verification method.
   handleFiles = (e) => {
   
     var file = e.target.files[0];
@@ -15,8 +15,7 @@ class Validator extends React.Component {
       return;
     }
 
-    // is needed to reference this.registerDocument from inside the onload function
-    // took only 3 hours to find this
+    // needed to reference this.verification from inside the onload function
     var self=this;
 
     this._fn=file.name;
@@ -29,6 +28,7 @@ class Validator extends React.Component {
     };
     reader.readAsBinaryString(file);
 }
+  //executes the contract call and stores the results in the dataKey1 in the State
   verification = value => {
     const { drizzle, drizzleState } = this.props;
     const contract = drizzle.contracts.Documents;
@@ -37,7 +37,7 @@ class Validator extends React.Component {
     this.setState({dataKey1});
   };
 
-
+  //Gets and formats the results, by using the stored dataKey1. Returns a JSX Element containing the information aswell as a button with toClipboard funtionality
   getResult = () => {
     const { Documents } = this.props.drizzleState.contracts;
     // using the saved `dataKey1`, get the return value of GetNumber function
@@ -60,6 +60,8 @@ class Validator extends React.Component {
         &nbsp; Copy the public address to Clipboard
       </Button></div>);
   }
+
+  //Gets the Filename of the provided file, used to display it next to the Select Button.
   getFilename=()=>{
     if(this._fn==""||this._fn==null){
       return null;
@@ -70,8 +72,10 @@ class Validator extends React.Component {
     }
 
   }
-  render() {  
 
+  //renders this element, including the file-upload button, a element for the Filename (necessary because we do not use the standard input element (because you cannot style these)) 
+  //and an element for displaying the results (which is empty before valid input is given)
+  render() {  
     return (
       <div>
         Select the document which you want to validate: <br></br><br></br>
@@ -82,10 +86,10 @@ class Validator extends React.Component {
             onChange={this.handleFiles}
           />
         Select file</label>
+
         {' '}
         {this.getFilename()}
-        
-        
+
         <div>{this.getResult()}</div>
        
       </div>
