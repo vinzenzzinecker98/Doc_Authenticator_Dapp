@@ -4,7 +4,9 @@
 install truffle 
     `npm install -g truffle`
 
-And clone this repository.
+Clone this repository.
+
+Make sure you have NodeJS (please use node v10.20.1, on newer versions errors may occure) and npm.
 
 In the /client directory, run:
     `npm install`
