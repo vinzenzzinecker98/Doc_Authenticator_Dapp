@@ -14,7 +14,14 @@ class RegisterDoc extends React.Component {
         {
           return;      
         }
-      this.regdoc(e.target.value);
+        var regex = new RegExp("[A-Fa-f0-9]{64}");
+        if(regex.test(e.target.value))
+        {
+          this.regdoc(e.target.value);
+        }
+        else {
+          window.confirm("Your given String is not a SHA-256 value, please try again. Please provide the String representation of a SHA256 Hash, which consists of 64 Hex values. Example: a591a6d40bf420404a011733cfb7b190d62c65bf0bcda32b57b277d9ad9f146e")
+        }
       }
       else {
         //TODO: Pop Up

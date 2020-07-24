@@ -43,6 +43,14 @@ class description extends React.Component {
     </Card>
     <br></br><br></br>
     <Card>
+      <Card.Header><h1>Miscellaneous</h1></Card.Header>
+      <Card.Body style={{"text-align": "left"}}><h3>How to generate hash values locally:</h3>
+      On Windows, you can 
+      
+      </Card.Body>
+    </Card>
+    <br></br><br></br>
+    <Card>
       <Card.Header><h1>How it works</h1></Card.Header>
       <Card.Body style={{"text-align": "left"}}><h3>Frameworks:</h3>
       We use the <a href="">trufflesuite framework </a>, which provides the local blockchain (ganache/ truffle develop) aswell as the tool to access the blockchain, drizzle. Drizzle 
@@ -51,6 +59,8 @@ class description extends React.Component {
       
       </Card.Body>
     </Card>
+    <br></br><br></br>
+    <br></br><br></br>
     </div>
     );
   }

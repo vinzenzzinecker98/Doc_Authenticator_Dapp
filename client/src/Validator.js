@@ -1,5 +1,6 @@
 import React from "react";
 import {toClip, checkMetamask} from "./util.js";
+import {Button} from 'react-bootstrap';
 class Validator extends React.Component {
   state = { dataKey1: null };
   result = { result: "u" };
@@ -39,12 +40,12 @@ class Validator extends React.Component {
 
     return (
     <div> This Document <span style={{color: '#a7e362'}}>has been registered</span> by <b>{address && address.value}</b><br></br> <br></br>
-    <button class="botn" onCLick={
+    <Button onCLick={
       toClip(address.value)
-      }>
+      } variant="primary">
       <i class="fa fa-clone"></i> 
       &nbsp; Copy the public address to Clipboard
-    </button></div>);
+    </Button></div>);
   }
   
   render() {  
