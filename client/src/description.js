@@ -44,7 +44,12 @@ class description extends React.Component {
     <br></br><br></br>
     <Card>
       <Card.Header><h1>How it works</h1></Card.Header>
-      <Card.Body><h3>Frameworks:</h3></Card.Body>
+      <Card.Body style={{"text-align": "left"}}><h3>Frameworks:</h3>
+      We use the <a href="">trufflesuite framework </a>, which provides the local blockchain (ganache/ truffle develop) aswell as the tool to access the blockchain, drizzle. Drizzle 
+      synchronizes the state of the blockchain with a redux store which is accessed by the frontend (running with react). We use facebook's react-scripts, as it provides a 
+      usable testing environment and is simple to setup.
+      
+      </Card.Body>
     </Card>
     </div>
     );

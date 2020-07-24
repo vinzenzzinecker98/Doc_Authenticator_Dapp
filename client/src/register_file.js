@@ -1,10 +1,11 @@
 import React from "react";
 import CryptoJS from "crypto-js";
 import {checkMetamask} from "./util.js";
-
+import {Button} from 'react-bootstrap';
 class Register_file extends React.Component {
   state = { stackId: null };
   _fn=null;
+  hashvalue=null;
 
   registerDocument = (value) => {
     const { drizzle, drizzleState } = this.props;
@@ -12,9 +13,9 @@ class Register_file extends React.Component {
 
     // let drizzle know we want to call the `register` method with `value`
     // TODO: Sending the correct account??? Only gives 0x00...001
-    const stackId = contract.methods["register"].cacheSend(value, {
-      from: drizzleState.accounts[3]
-    });
+    
+    const stackId = contract.methods["register"].cacheSend(value);
+    this.hashvalue=  value;
     console.log(stackId);
     // save the `stackId` for later reference
     this.setState({ stackId });
@@ -32,7 +33,16 @@ class Register_file extends React.Component {
 
     //if success return green status:
     if(transactions[txHash]!=undefined && transactions[txHash].status.toString()=='success'){
-      return (<div>Transaction status: <span style={{color: '#a7e362'}}>success!</span></div>)
+      //receipt.from gives the senders address       
+      this.message=
+      "mailto:?subject=How to verify the Document&body=The SHA-265 value of the document is: "+
+      this.hashvalue+ " %0D%0AYou can verify it at localhost:3000/val.%0D%0AMy public address is: "+ transactions[txHash].receipt.from+ 
+      ". %0D%0AYou can also look it up on the Blockchain: The registration transaction (TX-hash: "+ transactions[txHash].receipt.transactionHash +
+      ") is stored in Block "+ transactions[txHash].receipt.blockNumber+ ".";
+
+      return (<div>Transaction status: <span style={{color: '#a7e362'}}>success!</span><br></br><br></br>      
+      <Button href={this.message} variant="primary">Generate Email</Button>
+      </div>)
     }
     //if error return red status
     if(transactions[txHash]!=undefined && transactions[txHash].status.toString()=='error'){
