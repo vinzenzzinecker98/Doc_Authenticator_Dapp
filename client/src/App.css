@@ -15,7 +15,7 @@ input[type="file"] {
   }
 }
 .botn {
-  background-color: DodgerBlue; /* Blue background */
+  background-color: #007bff; /* Blue background */
   border: none; /* Remove borders */
   color: white; /* White text */
   padding: 10px 13px; /* Some padding */
@@ -24,7 +24,7 @@ input[type="file"] {
 }
 
 .custom-file-upload {
-  background-color: DodgerBlue; /* Blue background */
+  background-color: #007bff; /* Blue background */
   border: none; /* Remove borders */
   color: white; /* White text */
   padding: 10px 13px; /* Some padding */
