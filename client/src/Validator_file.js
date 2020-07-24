@@ -45,10 +45,10 @@ class Validator extends React.Component {
     var address = Documents.verify[this.state.dataKey1];
     //const result_1 = D
     if (address == undefined){
-      return `Please select a document`
+      return;
     }
     if (address.value == 0x0000000000000000000000000000000000000000 || address == 0){
-     return `The Document has not been registered yet`
+     return `The Document has not been registered yet`;
     }
 
     return (
