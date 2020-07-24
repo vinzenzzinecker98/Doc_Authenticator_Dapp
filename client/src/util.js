@@ -19,17 +19,17 @@ export const toClip=(s)=>{
 export const checkMetamask = (self) =>  {
     var web3=self.props.drizzle.web3;
     if (typeof web3 !== 'undefined') {
-      console.log('web3 is enabled');
+      //console.log('web3 is enabled');
       if (web3.currentProvider.isMetaMask === true) {
         
-        console.log('MetaMask is active');
+        //console.log('MetaMask is active');
         return true;
       } else {
-        console.log('MetaMask is not available');
+        //console.log('MetaMask is not available');
         return false;
       }
     } else {
-      console.log('web3 is not found');
+      //console.log('web3 is not found');
       return false;
     };
   }
