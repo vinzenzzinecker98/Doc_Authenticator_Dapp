@@ -2,7 +2,6 @@ import React from "react";
 import CryptoJS from "crypto-js";
 import {checkMetamask} from "./util.js";
 import {Button} from 'react-bootstrap';
-import CustomModal from "./CustomModal.js";
 class Register_file extends React.Component {
   state = { stackId: null };
   _fn=null;
@@ -143,7 +142,7 @@ class Register_file extends React.Component {
 
         
         <div>{this.getTxStatus()}</div>
-        <div>{this.Modal()}</div>
+        
       </div>
       
     );
