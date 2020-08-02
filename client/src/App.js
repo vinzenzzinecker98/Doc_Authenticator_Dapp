@@ -20,7 +20,7 @@ import {checkMetamask} from "./util.js";
 export default class App extends React.Component {
   
   
-  state = { loading: true, drizzleState: null };
+  state = { loading: true, drizzleState: null, showModal: false, modalText: null };
 
 
   //This function checks whether MetaMask is running and returns a corresponding element to appear in the Navbar (Top Right)
@@ -65,6 +65,9 @@ export default class App extends React.Component {
   </Navbar.Collapse>
     </Navbar>
     <div className="wrapper">
+
+    <CustomModal show={this.state.showModal} text={this.state.modalText}></CustomModal>
+    
     <Switch> 
           <Route path="/reg">
           <Accordion defaultActiveKey="0">

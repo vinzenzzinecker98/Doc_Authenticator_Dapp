@@ -16,6 +16,8 @@ export const toClip=(s)=>{
   }
 
 
+
+
 export const checkMetamask = (self) =>  {
     var web3=self.props.drizzle.web3;
     if (typeof web3 !== 'undefined') {

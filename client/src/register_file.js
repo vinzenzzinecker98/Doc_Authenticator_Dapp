@@ -2,6 +2,7 @@ import React from "react";
 import CryptoJS from "crypto-js";
 import {checkMetamask} from "./util.js";
 import {Button} from 'react-bootstrap';
+import CustomModal from "./CustomModal.js";
 class Register_file extends React.Component {
   state = { stackId: null };
   _fn=null;
@@ -25,6 +26,7 @@ class Register_file extends React.Component {
   };
 
   registerDocument = (value) => {
+    
     if(this.checkavailibility(value))
     {
       window.alert("This document has already been registered. You cannot alter ownership")
@@ -80,8 +82,6 @@ class Register_file extends React.Component {
     }
 
   };
-
-  
 
   getFilename=()=>{
     if(this._fn==""||this._fn==null){
@@ -143,8 +143,9 @@ class Register_file extends React.Component {
 
         
         <div>{this.getTxStatus()}</div>
-        
+        <div>{this.Modal()}</div>
       </div>
+      
     );
   }
 
