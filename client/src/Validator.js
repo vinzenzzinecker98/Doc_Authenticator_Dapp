@@ -38,6 +38,7 @@ class Validator extends React.Component {
     if (address == undefined){
       return;
     }
+    
     if (address.value == 0x0000000000000000000000000000000000000000 || address == 0){
      return `The Document has not been registered yet`
     }

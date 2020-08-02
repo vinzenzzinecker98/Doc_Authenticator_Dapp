@@ -2,35 +2,58 @@ import React from "react";
 import CryptoJS from "crypto-js";
 import {checkMetamask} from "./util.js";
 import {Button} from 'react-bootstrap';
+import { waitForDomChange } from "@testing-library/react";
 class Register_file extends React.Component {
-  state = { stackId: null };
+  state = { stackId: null, key:null };
   _fn=null;
   hashvalue=null;
 
   checkavailibility = value => {
     const { drizzle, drizzleState } = this.props;
     const contract = drizzle.contracts.Documents;    
-    const key =  contract.methods["verify"].cacheCall(value);
+    const key = contract.methods["verify"].cacheCall(value);
     const { Documents } = drizzleState.contracts;
     //console.log(dataKey1);
-    
-    var address = Documents.verify[key];
-    if (address == undefined){
-      return true;
-    }
-    if (address.value == 0x0000000000000000000000000000000000000000 || address == 0){
-     return true;
-    }
-    return false;
-  };
 
-  registerDocument = (value) => {
+    this.setState({key});
+
     
-    if(this.checkavailibility(value))
-    {
-      window.alert("This document has already been registered. You cannot alter ownership")
-      return;
+    return this.resultAvailibitly(); 
+    
+  };
+  resultAvailibitly = () => {
+    const { Documents } = this.props.drizzleState.contracts;   
+    
+    var address = Documents.verify[this.state.key];
+
+    if(address!==undefined)
+    { 
+       if (address.value == 0x0000000000000000000000000000000000000000 || address == 0 || address.value.toString() == "0x0000000000000000000000000000000000000000" )
+       {
+        return true;
+       }
+       else{         
+       return false;
+       }
     }
+    else{
+      setTimeout(this.resultAvailibitly, 250);
+    
+  }
+  }
+  
+  registerDocument = (value) => {
+    //do in async function, to wait for the cache call which returns the availability of the document(checks whether it has been regstered)
+    (async() => {
+      while(this.checkavailibility(value)==undefined){
+        await new Promise(resolve => setTimeout(resolve, 250));
+      }
+      if(this.checkavailibility(value)==false)
+      {
+      window.alert("This document has already been registered. You cannot alter ownership");
+      return;
+      }
+    
     const { drizzle, drizzleState } = this.props;
     const contract = drizzle.contracts.Documents;
 
@@ -42,6 +65,10 @@ class Register_file extends React.Component {
     console.log(stackId);
     // save the `stackId` for later reference
     this.setState({ stackId });
+    })();
+
+
+    
   };
 
   getTxStatus = () => {

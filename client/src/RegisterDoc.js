@@ -48,20 +48,67 @@ class RegisterDoc extends React.Component {
     }
   };
 
-  regdoc = value => {
-    if(this.checkavailibility(value)){
-      window.alert("This document has already been registered. You cannot alter ownership.")
-      return;
+  checkavailibility = value => {
+    const { drizzle, drizzleState } = this.props;
+    const contract = drizzle.contracts.Documents;    
+    const key = contract.methods["verify"].cacheCall(value);
+    const { Documents } = drizzleState.contracts;
+    //console.log(dataKey1);
+
+    this.setState({key});
+
+    
+    return this.resultAvailibitly(); 
+    
+  };
+  resultAvailibitly = () => {
+    const { Documents } = this.props.drizzleState.contracts;   
+    
+    var address = Documents.verify[this.state.key];
+
+    if(address!==undefined)
+    { 
+       if (address.value == 0x0000000000000000000000000000000000000000 || address == 0 || address.value.toString() == "0x0000000000000000000000000000000000000000" )
+       {
+        return true;
+       }
+       else{         
+       return false;
+       }
     }
+    else{
+      setTimeout(this.resultAvailibitly, 250);
+    
+  }
+  }
+  
+  regdoc = (value) => {
+    //do in async function, to wait for the cache call which returns the availability of the document(checks whether it has been regstered)
+    (async() => {
+      while(this.checkavailibility(value)==undefined){
+        await new Promise(resolve => setTimeout(resolve, 250));
+      }
+      if(this.checkavailibility(value)==false)
+      {
+      window.alert("This document has already been registered. You cannot alter ownership");
+      return;
+      }
+    
     const { drizzle, drizzleState } = this.props;
     const contract = drizzle.contracts.Documents;
-    
+
     // let drizzle know we want to call the `register` method with `value`
+    // TODO: Sending the correct account??? Only gives 0x00...001
+    
     const stackId = contract.methods["register"].cacheSend(value);
-    this.hashvalue=value;
+    this.hashvalue=  value;
     console.log(stackId);
     // save the `stackId` for later reference
     this.setState({ stackId });
+    })();
+
+
+    
   };
 
   
