@@ -65,9 +65,6 @@ export default class App extends React.Component {
   </Navbar.Collapse>
     </Navbar>
     <div className="wrapper">
-
-    <CustomModal show={this.state.showModal} text={this.state.modalText}></CustomModal>
-    
     <Switch> 
           <Route path="/reg">
           <Accordion defaultActiveKey="0">
