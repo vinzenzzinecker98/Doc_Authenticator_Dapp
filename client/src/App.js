@@ -74,7 +74,7 @@ export default class App extends React.Component {
               
               <Card>
                 <Card.Header>
-                  <Accordion.Toggle as={Button} variant="primary" eventKey="0">
+                  <Accordion.Toggle as={Button} variant="outline-secondary" block eventKey="0">
                     Register by file upload feature
                   </Accordion.Toggle>
                 </Card.Header>
@@ -89,7 +89,7 @@ export default class App extends React.Component {
               </Card>
               <Card>
                 <Card.Header>
-                  <Accordion.Toggle as={Button} variant="primary" eventKey="1">
+                  <Accordion.Toggle as={Button} variant="outline-secondary" block eventKey="1">
                     Register by manual Hash input
                   </Accordion.Toggle>
                 </Card.Header>
@@ -115,7 +115,7 @@ export default class App extends React.Component {
               
               <Card>
                 <Card.Header>
-                  <Accordion.Toggle as={Button} variant="primary" eventKey="0">
+                  <Accordion.Toggle as={Button} variant="outline-secondary" block eventKey="0">
                     Validate by file upload feature
                   </Accordion.Toggle>
                 </Card.Header>
@@ -131,7 +131,7 @@ export default class App extends React.Component {
 
               <Card>
                 <Card.Header>
-                  <Accordion.Toggle as={Button} variant="primary" eventKey="1">
+                  <Accordion.Toggle as={Button} variant="outline-secondary" block eventKey="1">
                     Validate by manual Hash input
                   </Accordion.Toggle>
                 </Card.Header>
