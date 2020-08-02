@@ -32,9 +32,9 @@ class Validator extends React.Component {
   getResult = () => {
     const { Documents } = this.props.drizzleState.contracts;
     
-    const result_1 = this.state.dataKey1;
+    
     var address = Documents.verify[this.state.dataKey1];
-    //why is it alyws 0 or 1???
+    
     if (address == undefined){
       return;
     }
