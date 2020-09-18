@@ -28,7 +28,7 @@ class Register_file extends React.Component {
 
     if(address!==undefined)
     { 
-       if (address.value == 0x0000000000000000000000000000000000000000 || address == 0 || address.value.toString() == "0x0000000000000000000000000000000000000000" )
+       if (address.value == null || address.value == 0x0000000000000000000000000000000000000000 || address == 0 || address.value.toString() == "0x0000000000000000000000000000000000000000" )
        {
         return true;
        }
