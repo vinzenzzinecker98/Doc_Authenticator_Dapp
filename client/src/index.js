@@ -16,7 +16,7 @@ const options = {
   web3: {
     fallback: {
       type: "ws",
-      //127.0.0.1:7545 is the location where the ganache chain is running
+      //127.0.0.1:7545 is the location where the default ganache chain is running, when using truffle develop, change to 9545
       url: "ws://127.0.0.1:7545",
     },
   },
