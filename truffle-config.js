@@ -9,7 +9,7 @@ module.exports = {
       host: "127.0.0.1",
       port: 7545,
       network_id: "5777", // Match any network id
-      gas: 22000
+      //usually you set a gas price here but deployment failed using that, without it it works
     }
   }
 };
