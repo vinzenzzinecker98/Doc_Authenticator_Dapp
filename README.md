@@ -30,6 +30,6 @@ run
     `npm start `
 while in the /client directory, which starts the local server. You browser should open up automatically.
 
-For using all features you also need to add the MetaMask plugin to your browser (Chrome or Firefox). 
-To connect Metamask to a account with sufficient balance go to "import account" and provide with a private key. The private keys can be found in the console after running truffle develop - or when using ganache you find these with a click on the key on the right. (which account you choose is not important, as both chains generate 10 Accounts for testing purposes)
+In order to use all features you need to add the MetaMask plugin to your browser (Chrome or Firefox). 
+To connect Metamask to a account with sufficient balance go to "import account" and provide it with a private key. The private keys can be found in the console after running truffle develop - or when using ganache you find these with a click on the key on the right. (which account you choose is not important, as both chains generate 10 Accounts for testing purposes)
 This is so that you have 100 ETH in your Account, to be able to send transactions (needed for registering documents to the ledger)
