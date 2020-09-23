@@ -127,7 +127,7 @@ class RegisterDoc extends React.Component {
     //if success return green status and generate Email Link - see https://tools.ietf.org/html/rfc6068
     if(transactions[txHash]!=undefined && transactions[txHash].status.toString()=='success'){
       this.message=
-      "mailto:?subject=How to verify the Document&body=The SHA-265 value of the document is: "+
+      "mailto:?subject=Doc Authenticator: new document registered&body=The SHA-265 value of the document is: "+
       this.hashvalue+ " %0D%0AYou can verify it at localhost:3000/val.%0D%0AMy public address is: "+ transactions[txHash].receipt.from+ 
       ". %0D%0AYou can also look it up on the Blockchain: The registration transaction (TX-hash: "+ transactions[txHash].receipt.transactionHash +
       ") is stored in Block "+ transactions[txHash].receipt.blockNumber+ ".";

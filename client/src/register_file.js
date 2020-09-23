@@ -85,7 +85,7 @@ class Register_file extends React.Component {
     if(transactions[txHash]!=undefined && transactions[txHash].status.toString()=='success'){
       //receipt.from gives the senders address       
       this.message=
-      "mailto:?subject=How to verify the Document&body=The SHA-265 value of the document is: "+
+      "mailto:?subject=Doc Authenticator: new document registered&body=The SHA-265 value of the document is: "+
       this.hashvalue+ " %0D%0AYou can verify it at localhost:3000/val.%0D%0AMy public address is: "+ transactions[txHash].receipt.from+ 
       ". %0D%0AYou can also look it up on the Blockchain: The registration transaction (TX-hash: "+ transactions[txHash].receipt.transactionHash +
       ") is stored in Block "+ transactions[txHash].receipt.blockNumber+ ".";
@@ -144,9 +144,9 @@ class Register_file extends React.Component {
     reader.onload = 
       function (e) {
         self._fn=file.name;
+
         var data = e.target.result;
         var encrypted = CryptoJS.SHA256(CryptoJS.enc.Latin1.parse(data)); //fix encoding (see https://stackoverflow.com/questions/20263741/getting-md5sum-of-a-file-through-crypto-js)
-        console.log('SHA265 of the document: ' + encrypted);
         self.registerDocument(encrypted.toString());
     };
     reader.readAsBinaryString(file);
