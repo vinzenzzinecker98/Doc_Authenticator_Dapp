@@ -42,14 +42,7 @@ class description extends React.Component {
       </Card.Body>
     </Card>
     <br></br><br></br>
-    <Card>
-      <Card.Header><h1>Miscellaneous</h1></Card.Header>
-      <Card.Body style={{"text-align": "left"}}><h3>How to generate hash values locally:</h3>
-      On Windows, you can 
-      
-      </Card.Body>
-    </Card>
-    <br></br><br></br>
+   
     <Card>
       <Card.Header><h1>How it works</h1></Card.Header>
       <Card.Body style={{"text-align": "left"}}><h3>Frameworks:</h3>
